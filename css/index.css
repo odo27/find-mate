@@ -1,0 +1,22 @@
+#main{
+  background-color: white;
+  width: 80%;
+  text-align: left;
+  line-height: 180%;
+}
+
+.pTitle{
+  color: rgb(144, 101, 176);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pTitle2{
+  color: rgb(0, 128, 255);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pText{
+  font-size: 15px;
+}

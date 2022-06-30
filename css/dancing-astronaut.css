@@ -1,0 +1,39 @@
+#main{
+  background-color: white;
+  width: 80%;
+  text-align: left;
+  line-height: 200%;
+  font-size: 16px;
+}
+
+.pTitle{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pText{
+  background-color: rgb(241, 241, 239);
+  margin: 2px 0px;
+  line-height: 50px;
+  padding: 0 15px;
+}
+
+.pText2{
+  background-color: rgb(251, 243, 219);
+  margin: 2px 0px;
+}
+
+.pText3{
+  background-color: rgb(237, 243, 236);
+  margin: 2px 0px;
+}
+
+.pText4{
+  background-color: rgb(250, 241, 245);
+  margin: 2px 0px;
+}
+
+.pText5{
+  background-color: rgb(231, 243, 248);
+  margin: 2px 0px;
+}
