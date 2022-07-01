@@ -2,6 +2,31 @@ const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const endPoint = 26;
 
+function goResult(){
+  qna.style.WebkitAnimation = "fadeOut 1s";
+  qna.style.animation = "fadeOut 1s";
+  setTimeout(() => {
+    result.style.WebkitAnimation = "fadeIn 1s";
+    result.style.animation = "fadeIn 1s";
+    setTimeout(() => {
+      qna.style.display = "none";
+      result.style.display = "block";
+    }, 450)
+
+    var imgBox = document.getElementById("imgBox");
+    imgBox.src = "../img/test1/result/" + "imgBox-case1.png";
+    var resultImg = document.getElementById("resultImg");
+    resultImg.src = "../img/test1/result/" + "resultImg-case1.avif";
+    var resultBox1 = document.querySelector('.resultText1');
+    resultBox1.innerHTML = resultText1;
+    var resultBox2 = document.querySelector('.resultText2');
+    resultBox2.innerHTML = resultText2;
+    var resultBox3 = document.querySelector('.resultText3');
+    resultBox3.innerHTML = resultText3;
+
+  }, 450);
+}
+
 function addAnswer(answerText, qIdx){
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
@@ -13,6 +38,10 @@ function addAnswer(answerText, qIdx){
   a.appendChild(answer);
   answer.innerHTML = answerText;
   answer.addEventListener("click", function(){
+    if (qIdx+1 == endPoint) {
+      goResult();
+      return;
+    }
     var imgElement = document.getElementById("imgId")
     imgElement.src = "../img/test1/page/"+imgList[qIdx+1];
     var children = document.querySelectorAll('.answerList');
