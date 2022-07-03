@@ -1,6 +1,18 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
-const endPoint = 26;
+const endPoint = qnaList.length;
+
+function goTest3() {
+  window.location.href = "../html/test3.html";
+}
+
+function goTest2() {
+  window.location.href = "../html/test2.html";
+}
+
+function goTest1() {
+  window.location.href = "../html/test1.html";
+}
 
 function goResult(){
   qna.style.WebkitAnimation = "fadeOut 1s";
@@ -14,9 +26,9 @@ function goResult(){
     }, 450)
 
     var imgBox = document.getElementById("imgBox");
-    imgBox.src = "../img/test1/result/" + "imgBox-case1.png";
+    imgBox.src = resultimgList[0];
     var resultImg = document.getElementById("resultImg");
-    resultImg.src = "../img/test1/result/" + "resultImg-case1.avif";
+    resultImg.src = resultimgList[1];
     var resultBox1 = document.querySelector('.resultText1');
     resultBox1.innerHTML = resultText1;
     var resultBox2 = document.querySelector('.resultText2');
@@ -43,7 +55,7 @@ function addAnswer(answerText, qIdx){
       return;
     }
     var imgElement = document.getElementById("imgId")
-    imgElement.src = "../img/test1/page/"+imgList[qIdx+1];
+    imgElement.src = imgList[qIdx+1];
     var children = document.querySelectorAll('.answerList');
     for(let i = 0; i < children.length; i++){
       children[i].disabled = true;

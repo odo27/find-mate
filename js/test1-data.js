@@ -194,32 +194,37 @@ const qnaList = [
 
 
 const imgList = [
-  'page-01.png',
-  'page-02.png',
-  'page-03.png',
-  'page-04.jpg',
-  'page-05.gif',
-  'page-06.gif',
-  'page-07.gif',
-  'page-08.png',
-  'page-09.png',
-  'page-10.png',
-  'page-11.gif',
-  'page-12.gif',
-  'page-13.gif',
-  'page-14.png',
-  'page-15.png',
-  'page-16.png',
-  'page-17.png',
-  'page-18.png',
-  'page-19.png',
-  'page-20.png',
-  'page-21.png',
-  'page-22.png',
-  'page-23.png',
-  'page-24.png',
-  'page-25.png',
-  'page-26.png'
+  '../img/test1/page/page-01.png',
+  '../img/test1/page/page-02.png',
+  '../img/test1/page/page-03.png',
+  '../img/test1/page/page-04.jpg',
+  '../img/test1/page/page-05.gif',
+  '../img/test1/page/page-06.gif',
+  '../img/test1/page/page-07.gif',
+  '../img/test1/page/page-08.png',
+  '../img/test1/page/page-09.png',
+  '../img/test1/page/page-10.png',
+  '../img/test1/page/page-11.gif',
+  '../img/test1/page/page-12.gif',
+  '../img/test1/page/page-13.gif',
+  '../img/test1/page/page-14.png',
+  '../img/test1/page/page-15.png',
+  '../img/test1/page/page-16.png',
+  '../img/test1/page/page-17.png',
+  '../img/test1/page/page-18.png',
+  '../img/test1/page/page-19.png',
+  '../img/test1/page/page-20.png',
+  '../img/test1/page/page-21.png',
+  '../img/test1/page/page-22.png',
+  '../img/test1/page/page-23.png',
+  '../img/test1/page/page-24.png',
+  '../img/test1/page/page-25.png',
+  '../img/test1/page/page-26.png'
+]
+
+const resultimgList = [
+  '../img/test1/result/imgBox-case1.png',
+  '../img/test1/result/resultImg-case1.avif'
 ]
 
 var resultText1 = '당신의 소울메이트는..<br>[]씨네 집에 살고 있습니다.'

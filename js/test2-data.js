@@ -1,4 +1,4 @@
-const case = [
+const resultCase = [
   '한',
   '이',
   '김',
@@ -167,32 +167,39 @@ const qnaList = [
       {answer: '나의 소울메이트 만나러 가기'}
     ]
   }
+]
 
 const imgList = [
-  'page-01.png',
-  'page-02.png',
-  'page-03.png',
-  'page-04.jpg',
-  'page-05.gif',
-  'page-06.gif',
-  'page-07.gif',
-  'page-08.png',
-  'page-09.png',
-  'page-10.png',
-  'page-11.gif',
-  'page-12.gif',
-  'page-13.gif',
-  'page-14.png',
-  'page-15.png',
-  'page-16.png',
-  'page-17.png',
-  'page-18.png',
-  'page-19.png',
-  'page-20.png',
-  'page-21.png',
-  'page-22.png',
-  'page-23.png',
-  'page-24.png',
-  'page-25.png',
-  'page-26.png'
+  '../img/test2/page/page-01.png',
+  '../img/test2/page/page-02.gif',
+  '../img/test2/page/page-03.png',
+  '../img/test2/page/page-04.png',
+  '../img/test2/page/page-05.png',
+  '../img/test2/page/page-06.png',
+  '../img/test2/page/page-07.gif',
+  '../img/test2/page/page-08.gif',
+  '../img/test2/page/page-09.png',
+  '../img/test2/page/page-10.png',
+  '../img/test2/page/page-11.png',
+  '../img/test2/page/page-12.png',
+  '../img/test2/page/page-13.png',
+  '../img/test2/page/page-14.png',
+  '../img/test2/page/page-15.png',
+  '../img/test2/page/page-16.png',
+  '../img/test2/page/page-17.png',
+  '../img/test2/page/page-18.png',
+  '../img/test2/page/page-19.png',
+  '../img/test2/page/page-20.png',
+  '../img/test2/page/page-21.png'
 ]
+
+const resultimgList = [
+  '../img/test2/result/imgBox-case2.png',
+  '../img/test2/result/resultImg-case2.png'
+]
+
+var resultText1 = '반가워요! 저는 당신의 소울메이트,<br>한겨울입니다.'
+
+var resultText2 = '<b>한겨울</b>⛄은, 이런 사람입니다.<br><br><b>감성</b>에 휘둘리는 편은 아닙니다.<br>스스로 <b>무엇을 좋아하는지</b> 문득 <b>궁금해합니다.</b><br><b>좋아하는 것</b>을 하려면 <b>현실적인 조건</b>부터 채워야 한다고<br>생각합니다.'
+
+var resultText3 = '당신의 소울메이트가 어떤 사람인지<br>더 궁금하지 않나요?<br><br>당신의 소울메이트,<br>생각보다 더 매력적인 사람일걸요?<br><br><b>천천히 서로에 대해 더 알아가야 합니다.</b><br><br>한겨울도 아직 당신에 대해<br>모르는 것이 많으니까요.<br><br>소울메이트를 찾기 위한<br>👇<b>마지막 테스트로 넘어갑니다</b>👇'
