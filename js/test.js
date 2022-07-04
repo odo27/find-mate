@@ -2,6 +2,10 @@ const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const endPoint = qnaList.length;
 
+function goFinal() {
+  window.location.href = "../html/final.html";
+}
+
 function goTest3() {
   window.location.href = "../html/test3.html";
 }

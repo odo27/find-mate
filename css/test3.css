@@ -1,0 +1,96 @@
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+* {
+  font-family: 'GowunDodum-Regular';
+}
+
+#main {
+  background-image: url(../img/test3/main/test3-background.jpg);
+  background-size: cover;
+  width: 45%;
+  text-align: center;
+  color: white;
+}
+
+#qna {
+  display: none;
+  background-image: url(../img/test3/main/test3-background.jpg);
+  background-size: cover;
+  width: 45%;
+  text-align: center;
+  color: white;
+}
+
+#result {
+  display: none;
+  width: 45%;
+  text-align: center;
+  color: white;
+}
+
+.countPage{
+  text-align: right;
+  width: 75%;
+  font-size: 13px;
+  opacity: 0.3;
+}
+
+.status{
+  height: 20px;
+  width: 80%;
+  background-color: rgb(20, 36, 55);
+  border-radius: 20px;
+}
+
+.statusBar{
+  height: 100%;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.imgLayout{
+  width: 70%;
+}
+
+.qBox{
+  text-align: center;
+}
+
+.answerBox{
+  height: 400px;
+}
+
+.answerList{
+  background-color: white;
+  border-radius: 20px;
+  display: block;
+  width: 80%;
+  border: 0px;
+  font-size: 13px;
+}
+
+.imgBox{
+  width: 100%;
+}
+
+.resultBox{
+  width: 80%;
+}
+
+.resultBoxBtn{
+  background-color: white;
+  border-radius: 20px;
+  display: block;
+  width: 70%;
+  border: 0px;
+  font-size: 13px;
+}
+
+@font-face {
+  font-family: 'GowunDodum-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
