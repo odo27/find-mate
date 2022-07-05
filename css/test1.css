@@ -9,7 +9,7 @@ body {
 #main {
   background-image: url(../img/test1/main/test1-background.jpg);
   background-size: cover;
-  width: 45%;
+
   text-align: center;
   color: white;
 }
@@ -18,14 +18,14 @@ body {
   display: none;
   background-image: url(../img/test1/main/test1-background.jpg);
   background-size: cover;
-  width: 45%;
+
   text-align: center;
   color: white;
 }
 
 #result {
   display: none;
-  width: 45%;
+  
   text-align: center;
   color: white;
 }
