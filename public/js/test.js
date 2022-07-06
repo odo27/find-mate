@@ -1,6 +1,8 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const endPoint = qnaList.length;
+const select = [];
+var testIdx = 0;
 
 function goFinal() {
   window.location.href = "../html/final.html";
@@ -19,6 +21,10 @@ function goTest1() {
 }
 
 function goResult(){
+
+  saveDB(testIdx, select);
+
+
   qna.style.WebkitAnimation = "fadeOut 1s";
   qna.style.animation = "fadeOut 1s";
   setTimeout(() => {
@@ -43,7 +49,7 @@ function goResult(){
   }, 450);
 }
 
-function addAnswer(answerText, qIdx){
+function addAnswer(answerText, qIdx, idx){
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
   answer.classList.add('answerList');
@@ -58,8 +64,13 @@ function addAnswer(answerText, qIdx){
       goResult();
       return;
     }
+    if (qIdx == 1 && testIdx == 0) {
+      var dateLayout = document.querySelector('.dateLayout');
+      dateLayout.style.display = "none";
+    }
     var imgElement = document.getElementById("imgId")
     imgElement.src = imgList[qIdx+1];
+
     var children = document.querySelectorAll('.answerList');
     for(let i = 0; i < children.length; i++){
       children[i].disabled = true;
@@ -67,8 +78,20 @@ function addAnswer(answerText, qIdx){
       children[i].style.animation = "fadeOut 0.5s";
     }
     setTimeout(() => {
+      if (qIdx == 1 && testIdx == 0) {
+        select[qIdx] = document.getElementById("dateBox").value;
+      }
+      else{
+        select[qIdx] = idx;
+      }
       for(let i = 0; i < children.length; i++){
         children[i].style.display = 'none';
+      }
+      if (qIdx == 0 && testIdx == 0) {
+        var dateBox = document.getElementById("dateBox");
+        dateBox.value = new Date().toISOString().substring(0, 10);
+        var dateLayout = document.querySelector('.dateLayout');
+        dateLayout.style.display = "block";
       }
       goNext(++qIdx);
     }, 450)
@@ -83,11 +106,12 @@ function goNext(qIdx){
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
   for(let i in qnaList[qIdx].a){
-    addAnswer(qnaList[qIdx].a[i].answer, qIdx);
+    addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
 }
 
-function begin() {
+function begin(testNum) {
+  testIdx = testNum;
   main.style.WebkitAnimation = "fadeOut 1s";
   main.style.animation = "fadeOut 1s";
   setTimeout(() => {
