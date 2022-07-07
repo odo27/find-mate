@@ -9,9 +9,9 @@ body {
 #main {
   background-image: url(../img/test3/main/test3-background.jpg);
   background-size: cover;
-
   text-align: center;
   color: white;
+  height: 100vh;
 }
 
 #qna {

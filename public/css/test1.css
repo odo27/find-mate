@@ -9,9 +9,9 @@ body {
 #main {
   background-image: url(../img/test1/main/test1-background.jpg);
   background-size: cover;
-
   text-align: center;
   color: white;
+  height: 100vh;
 }
 
 #qna {
@@ -28,6 +28,18 @@ body {
 
   text-align: center;
   color: white;
+}
+
+.tLayout{
+  height: 30vh;
+}
+
+.mLayout{
+  height: 50vh;
+}
+
+.bLayout{
+  height: 20vh;
 }
 
 .countPage{
