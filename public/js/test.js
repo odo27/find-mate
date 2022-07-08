@@ -20,7 +20,7 @@ function goTest1() {
   window.location.href = "../html/test1.html";
 }
 
-function goResult(){
+function goResult() {
 
   saveDB(testIdx, select);
 
@@ -49,18 +49,18 @@ function goResult(){
   }, 450);
 }
 
-function addAnswer(answerText, qIdx, idx){
+function addAnswer(answerText, qIdx, idx) {
   var a = document.querySelector('.answerBox');
   var answer = document.createElement('button');
+  answer.style.height = "15%";
   answer.classList.add('answerList');
   answer.classList.add('my-3');
-  answer.classList.add('py-3');
   answer.classList.add('mx-auto');
   answer.classList.add('fadeIn');
   a.appendChild(answer);
   answer.innerHTML = answerText;
-  answer.addEventListener("click", function(){
-    if (qIdx+1 == endPoint) {
+  answer.addEventListener("click", function() {
+    if (qIdx + 1 == endPoint) {
       goResult();
       return;
     }
@@ -69,10 +69,10 @@ function addAnswer(answerText, qIdx, idx){
       dateLayout.style.display = "none";
     }
     var imgElement = document.getElementById("imgId")
-    imgElement.src = imgList[qIdx+1];
+    imgElement.src = imgList[qIdx + 1];
 
     var children = document.querySelectorAll('.answerList');
-    for(let i = 0; i < children.length; i++){
+    for (let i = 0; i < children.length; i++) {
       children[i].disabled = true;
       children[i].style.WebkitAnimation = "fadeOut 0.5s";
       children[i].style.animation = "fadeOut 0.5s";
@@ -80,11 +80,10 @@ function addAnswer(answerText, qIdx, idx){
     setTimeout(() => {
       if (qIdx == 1 && testIdx == 0) {
         select[qIdx] = document.getElementById("dateBox").value;
-      }
-      else{
+      } else {
         select[qIdx] = idx;
       }
-      for(let i = 0; i < children.length; i++){
+      for (let i = 0; i < children.length; i++) {
         children[i].style.display = 'none';
       }
       if (qIdx == 0 && testIdx == 0) {
@@ -98,14 +97,14 @@ function addAnswer(answerText, qIdx, idx){
   }, false);
 }
 
-function goNext(qIdx){
+function goNext(qIdx) {
   var countPage = document.querySelector('.countPage');
-  countPage.innerHTML = (qIdx+1)+'/'+endPoint;
+  countPage.innerHTML = (qIdx + 1) + '/' + endPoint;
   var status = document.querySelector('.statusBar');
-  status.style.width = (100/endPoint) * qIdx + '%';
+  status.style.width = (100 / endPoint) * qIdx + '%';
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
-  for(let i in qnaList[qIdx].a){
+  for (let i in qnaList[qIdx].a) {
     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
   }
 }

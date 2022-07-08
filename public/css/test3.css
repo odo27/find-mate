@@ -18,51 +18,83 @@ body {
   display: none;
   background-image: url(../img/test3/main/test3-background.jpg);
   background-size: cover;
-
   text-align: center;
   color: white;
 }
 
 #result {
   display: none;
-
   text-align: center;
   color: white;
 }
 
-.countPage{
+.tLayout {
+  height: 30vh;
+}
+
+.mLayout {
+  height: 50vh;
+}
+
+.bLayout {
+  height: 20vh;
+}
+
+.tLayout2 {
+  height: 10vh;
+}
+
+.mLayout2 {
+  height: 40vh;
+}
+
+.bLayout2 {
+  height: 50vh;
+}
+
+.buttonBox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.countPage {
   text-align: right;
   width: 75%;
   font-size: 13px;
   opacity: 0.3;
 }
 
-.status{
+.status {
   height: 20px;
   width: 80%;
   background-color: rgb(20, 36, 55);
   border-radius: 20px;
 }
 
-.statusBar{
+.statusBar {
   height: 100%;
   border-radius: 20px;
   background-color: white;
 }
 
-.imgLayout{
+.imgLayout {
   width: 70%;
 }
 
-.qBox{
+.qBox {
   text-align: center;
 }
 
-.answerBox{
-  height: 400px;
+.answerBox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.answerList{
+.answerList {
   background-color: white;
   border-radius: 20px;
   display: block;
@@ -71,15 +103,15 @@ body {
   font-size: 13px;
 }
 
-.imgBox{
+.imgBox {
   width: 100%;
 }
 
-.resultBox{
+.resultBox {
   width: 80%;
 }
 
-.resultBoxBtn{
+.resultBoxBtn {
   background-color: white;
   border-radius: 20px;
   display: block;

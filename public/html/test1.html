@@ -13,6 +13,8 @@
 
 <body>
   <div class="container g-0">
+
+
     <section id="main" class="mx-auto col-lg-6 col-md-8 col-sm-10 col-xs-12">
       <div class="tLayout">
         <div style="height: 60%;">
@@ -39,32 +41,46 @@
         </div>
       </div>
       <div class="bLayout">
-        <button type="button" class="btn btn-outline-danger my-5 col-9"
-        onclick="js:begin(0)">테스트 시작하기</button>
+        <div class="buttonBox">
+          <button type="button" class="btn btn-outline-danger col-9 mx-auto" onclick="js:begin(0)">테스트 시작하기</button>
+        </div>
       </div>
     </section>
-    <section id="qna" class="mx-auto col-lg-6 col-md-8 col-sm-10 col-xs-12">
-      <div class="countPage mx-auto pt-5">
 
+
+
+
+    <section id="qna" class="mx-auto col-lg-6 col-md-8 col-sm-10 col-xs-12">
+
+      <div class="tLayout2">
+        <div class="countPage mx-auto pt-4">
+
+        </div>
+        <div class="status mx-auto">
+          <div class="statusBar">
+
+          </div>
+        </div>
       </div>
-      <div class="status mx-auto mb-5">
-        <div class="statusBar">
+      <div class="mLayout2">
+        <div class="imgLayout mx-auto pt-3" style="height: 70%;">
+          <img src="../img/test1/page/page-01.png" alt="" style="width: 100%; object-fit:cover;" id="imgId">
+        </div>
+        <div class="qBox" style="height: 30%;">
+
+        </div>
+        <div class="dateLayout">
+          <input type="date" id="dateBox">
+        </div>
+      </div>
+      <div class="bLayout2">
+        <div class="answerBox">
 
         </div>
       </div>
-      <div class="imgLayout mx-auto">
-        <img src="../img/test1/page/page-01.png" alt="" style="width: 100%; object-fit:cover;" id="imgId">
-      </div>
-      <div class="qBox my-5">
-
-      </div>
-      <div class="dateLayout">
-        <input type="date" id="dateBox">
-      </div>
-      <div class="answerBox pb-5">
-
-      </div>
     </section>
+
+
     <section id="result" class="mx-auto col-lg-6 col-md-8 col-sm-10 col-xs-12">
       <div class="imgBox">
         <img src="" alt="imgBox" id="imgBox" class="img-fluid">
@@ -82,8 +98,7 @@
         <div class="resultText3 my-5" style="text-align: left;">
 
         </div>
-        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3"
-        onclick="js:goTest2()">나의 소울메이트 찾으러 가기</button>
+        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" onclick="js:goTest2()">나의 소울메이트 찾으러 가기</button>
         <div class="col-6 mx-auto mt-5 mb-2" style="font-size: 16px;">
           친구에게 테스트 공유하기<br>
         </div>
