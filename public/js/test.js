@@ -3,6 +3,18 @@ const qna = document.querySelector("#qna");
 const endPoint = qnaList.length;
 const select = [];
 var testIdx = 0;
+var g_qIdx = 0;
+
+setScreenSize();
+window.addEventListener('resize', () => setScreenSize());
+
+function setScreenSize() {
+  let vh = window.innerHeight * 0.01;
+
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+
 
 function goFinal() {
   window.location.href = "../html/final.html";
@@ -83,6 +95,7 @@ function addAnswer(answerText, qIdx, idx) {
       } else {
         select[qIdx] = idx;
       }
+
       for (let i = 0; i < children.length; i++) {
         children[i].style.display = 'none';
       }
@@ -97,7 +110,60 @@ function addAnswer(answerText, qIdx, idx) {
   }, false);
 }
 
+function goPrev() {
+
+  if (g_qIdx == 0) {} else {
+    g_qIdx--;
+
+
+    if (g_qIdx == 0 && testIdx == 0) {
+      var dateLayout = document.querySelector('.dateLayout');
+      dateLayout.style.display = "none";
+    }
+
+    var imgElement = document.getElementById("imgId")
+    imgElement.src = imgList[g_qIdx];
+
+    var children = document.querySelectorAll('.answerList');
+    for (let i = 0; i < children.length; i++) {
+      children[i].disabled = true;
+      children[i].style.WebkitAnimation = "fadeOut 0.5s";
+      children[i].style.animation = "fadeOut 0.5s";
+    }
+
+    setTimeout(() => {
+      for (let i = 0; i < children.length; i++) {
+        children[i].style.display = 'none';
+      }
+      if (g_qIdx == 1 && testIdx == 0) {
+        var dateLayout = document.querySelector('.dateLayout');
+        dateLayout.style.display = "block";
+      }
+
+      var countPage = document.querySelector('.countPage');
+      countPage.innerHTML = (g_qIdx + 1) + '/' + endPoint;
+      var status = document.querySelector('.statusBar');
+      status.style.width = (100 / endPoint) * g_qIdx + '%';
+
+      var q = document.querySelector('.qBox');
+      q.innerHTML = qnaList[g_qIdx].q;
+
+      for (let i in qnaList[g_qIdx].a) {
+        addAnswer(qnaList[g_qIdx].a[i].answer, g_qIdx, i);
+      }
+    }, 450)
+  }
+}
+
+
+
+
+
+
+
 function goNext(qIdx) {
+
+  g_qIdx = qIdx;
   var countPage = document.querySelector('.countPage');
   countPage.innerHTML = (qIdx + 1) + '/' + endPoint;
   var status = document.querySelector('.statusBar');

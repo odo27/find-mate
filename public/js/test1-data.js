@@ -1,3 +1,42 @@
+function preloading(imageArray) {
+  let n = imageArray.length;
+  for (let i = 0; i < n; i++) {
+    let img = new Image();
+    img.src = imageArray[i];
+  }
+}
+
+const imgList = [
+  '../img/test1/page/page-01.png',
+  '../img/test1/page/page-02.png',
+  '../img/test1/page/page-03.png',
+  '../img/test1/page/page-04.jpg',
+  '../img/test1/page/page-05.gif',
+  '../img/test1/page/page-06.gif',
+  '../img/test1/page/page-07.gif',
+  '../img/test1/page/page-08.png',
+  '../img/test1/page/page-09.png',
+  '../img/test1/page/page-10.png',
+  '../img/test1/page/page-11.gif',
+  '../img/test1/page/page-12.gif',
+  '../img/test1/page/page-13.gif',
+  '../img/test1/page/page-14.png',
+  '../img/test1/page/page-15.png',
+  '../img/test1/page/page-16.png',
+  '../img/test1/page/page-17.png',
+  '../img/test1/page/page-18.png',
+  '../img/test1/page/page-19.png',
+  '../img/test1/page/page-20.png',
+  '../img/test1/page/page-21.png',
+  '../img/test1/page/page-22.png',
+  '../img/test1/page/page-23.png',
+  '../img/test1/page/page-24.png',
+  '../img/test1/page/page-25.png',
+  '../img/test1/page/page-26.png'
+]
+
+preloading(imgList)
+
 const qnaList = [
   {
     q: '반갑습니다.<br>당신의 소울메이트를 찾기 위해<br><b>가이드 T가 함께합니다.</b>',
@@ -192,35 +231,6 @@ const qnaList = [
   }
 ]
 
-
-const imgList = [
-  '../img/test1/page/page-01.png',
-  '../img/test1/page/page-02.png',
-  '../img/test1/page/page-03.png',
-  '../img/test1/page/page-04.jpg',
-  '../img/test1/page/page-05.gif',
-  '../img/test1/page/page-06.gif',
-  '../img/test1/page/page-07.gif',
-  '../img/test1/page/page-08.png',
-  '../img/test1/page/page-09.png',
-  '../img/test1/page/page-10.png',
-  '../img/test1/page/page-11.gif',
-  '../img/test1/page/page-12.gif',
-  '../img/test1/page/page-13.gif',
-  '../img/test1/page/page-14.png',
-  '../img/test1/page/page-15.png',
-  '../img/test1/page/page-16.png',
-  '../img/test1/page/page-17.png',
-  '../img/test1/page/page-18.png',
-  '../img/test1/page/page-19.png',
-  '../img/test1/page/page-20.png',
-  '../img/test1/page/page-21.png',
-  '../img/test1/page/page-22.png',
-  '../img/test1/page/page-23.png',
-  '../img/test1/page/page-24.png',
-  '../img/test1/page/page-25.png',
-  '../img/test1/page/page-26.png'
-]
 
 const resultimgList = [
   '../img/test1/result/imgBox-case1.png',
