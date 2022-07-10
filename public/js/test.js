@@ -115,9 +115,16 @@ function addAnswer(answerText, qIdx, idx) {
 
 function goPrev() {
 
+  var prevButton = document.querySelector('.prevButton');
+  prevButton.style.pointerEvents = "none";
+
   if(g_qIdx == 0) {
   }
   else{
+
+
+
+
     g_qIdx--;
 
 
@@ -167,6 +174,11 @@ function goPrev() {
       }
     }, 450)
   }
+
+
+  setTimeout(() => {
+    prevButton.style.pointerEvents = "auto";
+  }, 500)
 }
 
 function goNext(qIdx) {
@@ -202,6 +214,8 @@ function goNext(qIdx) {
 }
 
 function begin(testNum) {
+  var startButton = document.getElementById("startButton");
+  startButton.disabled = true;
   testIdx = testNum;
   main.style.WebkitAnimation = "fadeOut 1s";
   main.style.animation = "fadeOut 1s";
