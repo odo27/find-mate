@@ -234,7 +234,7 @@ const qnaList = [
 
 const resultimgList = [
   '../img/test1/result/imgBox-case1.png',
-  '../img/test1/result/resultImg-case1.avif'
+  '../img/test1/result/resultImg-case1.png'
 ]
 
 var resultText1 = '당신의 소울메이트는..<br>[]씨네 집에 살고 있습니다.'

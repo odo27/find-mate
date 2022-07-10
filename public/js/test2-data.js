@@ -1,3 +1,39 @@
+function preloading(imageArray) {
+  let n = imageArray.length;
+  for (let i = 0; i < n; i++) {
+    let img = new Image();
+    img.src = imageArray[i];
+  }
+}
+
+
+const imgList = [
+  '../img/test2/page/page-01.png',
+  '../img/test2/page/page-02.gif',
+  '../img/test2/page/page-03.png',
+  '../img/test2/page/page-04.png',
+  '../img/test2/page/page-05.png',
+  '../img/test2/page/page-06.png',
+  '../img/test2/page/page-07.gif',
+  '../img/test2/page/page-08.gif',
+  '../img/test2/page/page-09.png',
+  '../img/test2/page/page-10.png',
+  '../img/test2/page/page-11.png',
+  '../img/test2/page/page-12.png',
+  '../img/test2/page/page-13.png',
+  '../img/test2/page/page-14.png',
+  '../img/test2/page/page-15.png',
+  '../img/test2/page/page-16.png',
+  '../img/test2/page/page-17.png',
+  '../img/test2/page/page-18.png',
+  '../img/test2/page/page-19.png',
+  '../img/test2/page/page-20.png',
+  '../img/test2/page/page-21.png'
+]
+
+preloading(imgList)
+
+
 const resultCase = [
   '한',
   '이',
@@ -167,30 +203,6 @@ const qnaList = [
       {answer: '나의 소울메이트 만나러 가기'}
     ]
   }
-]
-
-const imgList = [
-  '../img/test2/page/page-01.png',
-  '../img/test2/page/page-02.gif',
-  '../img/test2/page/page-03.png',
-  '../img/test2/page/page-04.png',
-  '../img/test2/page/page-05.png',
-  '../img/test2/page/page-06.png',
-  '../img/test2/page/page-07.gif',
-  '../img/test2/page/page-08.gif',
-  '../img/test2/page/page-09.png',
-  '../img/test2/page/page-10.png',
-  '../img/test2/page/page-11.png',
-  '../img/test2/page/page-12.png',
-  '../img/test2/page/page-13.png',
-  '../img/test2/page/page-14.png',
-  '../img/test2/page/page-15.png',
-  '../img/test2/page/page-16.png',
-  '../img/test2/page/page-17.png',
-  '../img/test2/page/page-18.png',
-  '../img/test2/page/page-19.png',
-  '../img/test2/page/page-20.png',
-  '../img/test2/page/page-21.png'
 ]
 
 const resultimgList = [
