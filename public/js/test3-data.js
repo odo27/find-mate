@@ -1,3 +1,34 @@
+const test1resultIdx = parseInt(location.href.split('?')[1]);
+const test2resultIdx = parseInt(location.href.split('?')[2]);
+const pagePath = '../img/test3/page/case'+String(test1resultIdx+1)+'/case'+String(test2resultIdx+1)+'/';
+
+const test1case = [
+  '한',
+  '이',
+  '차',
+  '김'
+]
+
+const test2case = [
+  '봄',
+  '여름',
+  '가을',
+  '겨울'
+]
+
+const test3case = [
+  '따뜻한',
+  '집중하는',
+  '공감하는',
+  '현실적인'
+]
+
+setMainImg(test1resultIdx, test2resultIdx);
+
+function setMainImg(resultIdx1, resultIdx2){
+  document.getElementById('testMainImg').src = "../img/test3/main/case" + String(resultIdx1+1) + "/case"+ String(resultIdx2+1) + "/test3-main.png";
+}
+
 function preloading(imageArray) {
   let n = imageArray.length;
   for (let i = 0; i < n; i++) {
@@ -7,43 +38,37 @@ function preloading(imageArray) {
 }
 
 const imgList = [
-  '../img/test3/page/page-01.png',
-  '../img/test3/page/page-02.gif',
-  '../img/test3/page/page-03.gif',
-  '../img/test3/page/page-04.png',
-  '../img/test3/page/page-05.png',
-  '../img/test3/page/page-06.png',
-  '../img/test3/page/page-07.png',
-  '../img/test3/page/page-08.png',
-  '../img/test3/page/page-09.png',
-  '../img/test3/page/page-10.png',
-  '../img/test3/page/page-11.png',
-  '../img/test3/page/page-12.png',
-  '../img/test3/page/page-13.png',
-  '../img/test3/page/page-14.png',
-  '../img/test3/page/page-15.png',
-  '../img/test3/page/page-16.png',
-  '../img/test3/page/page-17.png',
-  '../img/test3/page/page-18.png',
-  '../img/test3/page/page-19.png',
-  '../img/test3/page/page-20.png',
-  '../img/test3/page/page-21.png',
-  '../img/test3/page/page-22.png',
-  '../img/test3/page/page-23.png',
-  '../img/test3/page/page-24.png',
-  '../img/test3/page/page-25.png',
-  '../img/test3/page/page-26.png',
-  '../img/test3/page/page-27.png'
+  '../img/test3/page/share/page-01.png',
+  '../img/test3/page/share/page-02.gif',
+  '../img/test3/page/share/page-03.gif',
+  '../img/test3/page/share/page-04.png',
+  '../img/test3/page/share/page-05.png',
+  pagePath+'page-hi.png',
+  pagePath+'page-fist.png',
+  pagePath+'page-pocket.png',
+  pagePath+'page-v.png',
+  pagePath+'page-cross.png',
+  pagePath+'page-fist.png',
+  pagePath+'page-v.png',
+  pagePath+'page-cross.png',
+  pagePath+'page-pocket.png',
+  pagePath+'page-cross.png',
+  pagePath+'page-pocket.png',
+  pagePath+'page-v.png',
+  pagePath+'page-fist.png',
+  pagePath+'page-cross.png',
+  pagePath+'page-pocket.png',
+  pagePath+'page-cross.png',
+  pagePath+'page-v.png',
+  pagePath+'page-fist.png',
+  pagePath+'page-pocket.png',
+  pagePath+'page-cross.png',
+  pagePath+'page-pocket.png',
+  pagePath+'page-fist.png',
+  pagePath+'page-fire.png'
 ]
 
 preloading(imgList)
-
-const case2 = [
-  '봄',
-  '여름',
-  '가을',
-  '겨울'
-]
 
 const qnaList = [
   {
@@ -64,7 +89,7 @@ const qnaList = [
     q: '<b>이 곳은 삶의 방향을 잃기 전</b><br>당신의 소울메이트를 찾는 경계선<br>함께 서로에 대해 더 알아가보도록 해요.',
     a: [
       {answer: '네, 좋아요.'},
-      {answer: '[]이 더 궁금해지는 걸요!'}
+      {answer: test1case[test1resultIdx] + test2case[test2resultIdx] + '이 더 궁금해지는 걸요!'}
     ]
   },
   {
@@ -76,7 +101,7 @@ const qnaList = [
   {
     q: '그럼 저는 여기까지였습니다.<br>즐거웠습니다.:)',
     a: [
-      {answer: '[] 만나러 가기'}
+      {answer: test1case[test1resultIdx] + test2case[test2resultIdx] + ' 만나러 가기'}
     ]
   },
   {
@@ -150,63 +175,70 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q8.<br>결국 사람한테 어떤 것이 중요할까 고민하고<br>나중에는 <b>그 사람의 경제적 지위나</b><br><b>재산</b>을 따지게 되더라고요.',
+    q: 'Q8.<br>그런 사람들을 대할 때마다 스스로 친절해도 되는 건지, 거리를 두며 대화해야 하는 건지 어려웠어요.',
+    a: [
+      {answer: '(우선 거리를 둬야지! 무조건 친절하기만 해서는 잃는 것이 더 많을 수 있어)'},
+      {answer: '(굳이 친절하지 않을 이유도 없지 않나? 일단 친절하게 대하고 보는거지!)'}
+    ]
+  },
+  {
+    q: 'Q9.<br>결국 사람한테 어떤 것이 중요할까 고민하고<br>나중에는 <b>그 사람의 경제적 지위나</b><br><b>재산</b>을 따지게 되더라고요.',
     a: [
       {answer: '(결국 돈이긴 하지, 숫자로 나타나는<br>것만큼 사람을 평가할 객관적인 것도 없어)'},
       {answer: '(그래도 돈이나 재산으로 사람을<br>평가하는 건 무리가 있을텐데)'}
     ]
   },
   {
-    q: 'Q9.<br>결론은 모르겠어요. 그냥 <b>당연한 것부터 해볼려고요.</b><br>무단횡단 안하고, 환경도 아끼고.. 당신은 어때요?',
+    q: 'Q10.<br>결론은 모르겠어요. 그냥 <b>당연한 것부터 해볼려고요.</b><br>무단횡단 안하고, 환경도 아끼고.. 당신은 어때요?',
     a: [
       {answer: '글쎄요, 솔직히 좀 어렵기는 하네요.<br>저는 몰래 몰래 어기면서 온 것 같은데요.'},
       {answer: '저도 그래요, 사소한 것부터<br>하나하나 지키려고 노력해왔죠.'},
     ]
   },
   {
-    q: 'Q10.<br>어떻든 무슨 의미겠어요. 삶의 의미가 중요하죠..<br>문득 궁금해요, <b>당신 주변에는 어떤 사람이 있나요?</b>',
+    q: 'Q11.<br>어떻든 무슨 의미겠어요. 삶의 의미가 중요하죠..<br>문득 궁금해요, <b>당신 주변에는 어떤 사람이 있나요?</b>',
     a: [
       {answer: '주변에는 제가 좋은 사람이도록<br>만드는 사람들이 더 많은것 같아요.'},
       {answer: '주변에는 제가 좋은 사람이 되기에는<br>각박하게 만드는 사람들이 더 많아요.'}
     ]
   },
   {
-    q: 'Q11.<br>그렇군요, 인간관계란 참 어려운 것 같아요..<br>이야기 하다 보니 궁금한 것이 생겼어요!',
+    q: '그렇군요, 인간관계란 참 어려운 것 같아요..<br>이야기 하다 보니 궁금한 것이 생겼어요!',
     a: [
       {answer: '뭔데요?'},
       {answer: '(궁금한 표정과 작은 미소를 짓는다)'}
     ]
   },
   {
-    q: 'Q12.<br>제가 예전에 친구들하고 크게 다툰 적이 있어요.<br>이유는 서로 <b>친구를 보는 관점</b>이 달라서였거든요.',
+    q: '제가 예전에 친구들하고 크게 다툰 적이 있어요.<br>이유는 서로 <b>친구를 보는 관점</b>이 달라서였거든요.',
     a: [
       {answer: '(나도 친구들하고 그것 때문에 다툰 적이 있었지)'},
       {answer: '(친구를 바라보는 관점이라..<br>다를 수 있지)'}
     ]
   },
   {
-    q: 'Q13.<br>그래서 당신 생각이 궁금해요.<br><b>실질적으로 도움 되지 않는 친구가 있다면 어때요?</b>',
+    q: 'Q12.<br>그래서 당신 생각이 궁금해요.<br><b>실질적으로 도움 되지 않는 친구가 있다면 어때요?</b>',
     a: [
       {answer: '그러면 딱 그정도 아닐까요?<br>결국 친구도 서로 도움이 되어야 하잖아요.'},
       {answer: '친구는 좀 다른 것 같아요. 실질적으로<br>도움이 되고 안되고는 친구사이에 상관없죠.'}
     ]
   },
   {
-    q: 'Q14.<br>역시 그런가요.. 어렵네요.. 늘 열심히 살았어요.<br><b>주변 사람들보다 더 성공하려고 최선을 다했죠.</b>',
+    q: 'Q13.<br>역시 그런가요.. 어렵네요.. 늘 열심히 살았어요.<br><b>주변 사람들보다 더 성공하려고 최선을 다했죠.</b>',
     a: [
       {answer: '(정말 노력하는 인생을 사셨구나..<br>나도 누구보다 성공하고 싶어!)'},
       {answer: '(열심히 사셨구나.. 나는 다른 사람보다<br>꼭 성공하고 싶고 그렇지는 않던데)'}
     ]
   },
   {
-    q: 'Q15.<br>그렇게 치열하게 살면서도<br>이상하리만큼 <b>남을 위한 삶을 사는 사람들</b>도<br>만나왔어요. 싱숭생숭하더라고요.',
+    q: 'Q14.<br>그렇게 치열하게 살면서도<br>이상하리만큼 <b>남을 위한 삶을 사는 사람들</b>도<br>만나왔어요. 싱숭생숭하더라고요.',
     a: [
       {answer: '(그런 사람 보면 솔직히 가끔 가식이라는<br>생각도 들던데, 원하는게 따로 있지 않나?)'},
       {answer: '(그런 사람들 보면 대단하지,<br>아직 살만한 세상 같기도 하고)'}
     ]
   },
   {
-    q: 'Q16.<br>정답은 저도 모르겠어요. 여전히 세상이 궁금해요.<br><b>돈, 법, 질서 다 왜 필요한 걸까..</b> 그런 생각?',
+    q: 'Q15.<br>정답은 저도 모르겠어요. 여전히 세상이 궁금해요.<br><b>돈, 법, 질서 다 왜 필요한 걸까..</b> 그런 생각?',
     a: [
       {answer: '(돈, 법, 질서 모두 나를 지킬 수 있는 무기잖아?<br>그런 면에서 당연히 필요하지!)'},
       {answer: '(우리 모두를 위해서 필요한 게 아닐까?<br>모두가 행복하려면 꼭 있어야지)'}
@@ -233,13 +265,37 @@ const qnaList = [
   }
 ]
 
-const resultimgList = [
-  '../img/test3/result/imgBox-case3.png',
-  '../img/test3/result/resultImg-case3.png'
+const imgBoxList = [
+  '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/imgBox-case1.png',
+  '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/imgBox-case2.png',
+  '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/imgBox-case3.png',
+  '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/imgBox-case4.png'
 ]
 
-var resultText1 = '.<br>.<br>'
+const resultImgList = [
+  '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/resultImg-case1.png',
+  '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/resultImg-case2.png',
+  '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/resultImg-case3.png',
+  '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/resultImg-case4.png'
+]
 
-var resultText2 = ''
+var resultText1 = [
+  '.<br>.<br>',
+  '.<br>.<br>',
+  '.<br>.<br>',
+  '.<br>.<br>'
+]
 
-var resultText3 = ''
+var resultText2 = [
+  '',
+  '',
+  '',
+  ''
+]
+
+var resultText3 = [
+  '',
+  '',
+  '',
+  ''
+]

@@ -1,44 +1,140 @@
-function preloading(imageArray) {
-  let n = imageArray.length;
+const test1resultIdx = parseInt(location.href.split('?')[1]);
+
+const test1case = [
+  '한',
+  '이',
+  '차',
+  '김'
+]
+
+const test2case = [
+  '봄',
+  '여름',
+  '가을',
+  '겨울'
+]
+
+setMainImg(test1resultIdx);
+
+function setMainImg(resultIdx){
+  document.getElementById('testMainImg').src = "../img/test2/main/case" + String(resultIdx+1) + "/test2-main.png";
+}
+
+function preloading(imageArray, resultIdx) {
+  let n = imageArray[resultIdx].length;
   for (let i = 0; i < n; i++) {
     let img = new Image();
-    img.src = imageArray[i];
+    img.src = imageArray[resultIdx][i];
   }
 }
 
-
 const imgList = [
-  '../img/test2/page/page-01.png',
-  '../img/test2/page/page-02.gif',
-  '../img/test2/page/page-03.png',
-  '../img/test2/page/page-04.png',
-  '../img/test2/page/page-05.png',
-  '../img/test2/page/page-06.png',
-  '../img/test2/page/page-07.gif',
-  '../img/test2/page/page-08.gif',
-  '../img/test2/page/page-09.png',
-  '../img/test2/page/page-10.png',
-  '../img/test2/page/page-11.png',
-  '../img/test2/page/page-12.png',
-  '../img/test2/page/page-13.png',
-  '../img/test2/page/page-14.png',
-  '../img/test2/page/page-15.png',
-  '../img/test2/page/page-16.png',
-  '../img/test2/page/page-17.png',
-  '../img/test2/page/page-18.png',
-  '../img/test2/page/page-19.png',
-  '../img/test2/page/page-20.png',
-  '../img/test2/page/page-21.png'
+  [
+    '../img/test2/page/case1/page-01.png',
+    '../img/test2/page/share/page-02.gif',
+    '../img/test2/page/case1/page-03.png',
+    '../img/test2/page/case1/page-04.png',
+    '../img/test2/page/case1/page-05.png',
+    '../img/test2/page/case1/page-06.png',
+    '../img/test2/page/share/page-07.gif',
+    '../img/test2/page/case1/page-08.gif',
+    '../img/test2/page/share/page-09.png',
+    '../img/test2/page/share/page-10.png',
+    '../img/test2/page/share/page-11.png',
+    '../img/test2/page/share/page-12.png',
+    '../img/test2/page/share/page-13.png',
+    '../img/test2/page/share/page-14.png',
+    '../img/test2/page/share/page-15.png',
+    '../img/test2/page/share/page-16.png',
+    '../img/test2/page/share/page-17.png',
+    '../img/test2/page/share/page-18.png',
+    '../img/test2/page/share/page-19.png',
+    '../img/test2/page/share/page-20.png',
+    '../img/test2/page/share/page-21.png',
+    '../img/test2/page/share/page-22.png'
+  ],
+  [
+    '../img/test2/page/case2/page-01.png',
+    '../img/test2/page/share/page-02.gif',
+    '../img/test2/page/case2/page-03.png',
+    '../img/test2/page/case2/page-04.png',
+    '../img/test2/page/case2/page-05.png',
+    '../img/test2/page/case2/page-06.png',
+    '../img/test2/page/share/page-07.gif',
+    '../img/test2/page/case2/page-08.gif',
+    '../img/test2/page/share/page-09.png',
+    '../img/test2/page/share/page-10.png',
+    '../img/test2/page/share/page-11.png',
+    '../img/test2/page/share/page-12.png',
+    '../img/test2/page/share/page-13.png',
+    '../img/test2/page/share/page-14.png',
+    '../img/test2/page/share/page-15.png',
+    '../img/test2/page/share/page-16.png',
+    '../img/test2/page/share/page-17.png',
+    '../img/test2/page/share/page-18.png',
+    '../img/test2/page/share/page-19.png',
+    '../img/test2/page/share/page-20.png',
+    '../img/test2/page/share/page-21.png',
+    '../img/test2/page/share/page-22.png'
+  ],
+  [
+    '../img/test2/page/case3/page-01.png',
+    '../img/test2/page/share/page-02.gif',
+    '../img/test2/page/case3/page-03.png',
+    '../img/test2/page/case3/page-04.png',
+    '../img/test2/page/case3/page-05.png',
+    '../img/test2/page/case3/page-06.png',
+    '../img/test2/page/share/page-07.gif',
+    '../img/test2/page/case3/page-08.gif',
+    '../img/test2/page/share/page-09.png',
+    '../img/test2/page/share/page-10.png',
+    '../img/test2/page/share/page-11.png',
+    '../img/test2/page/share/page-12.png',
+    '../img/test2/page/share/page-13.png',
+    '../img/test2/page/share/page-14.png',
+    '../img/test2/page/share/page-15.png',
+    '../img/test2/page/share/page-16.png',
+    '../img/test2/page/share/page-17.png',
+    '../img/test2/page/share/page-18.png',
+    '../img/test2/page/share/page-19.png',
+    '../img/test2/page/share/page-20.png',
+    '../img/test2/page/share/page-21.png',
+    '../img/test2/page/share/page-22.png'
+  ],
+  [
+    '../img/test2/page/case4/page-01.png',
+    '../img/test2/page/share/page-02.gif',
+    '../img/test2/page/case4/page-03.png',
+    '../img/test2/page/case4/page-04.png',
+    '../img/test2/page/case4/page-05.png',
+    '../img/test2/page/case4/page-06.png',
+    '../img/test2/page/share/page-07.gif',
+    '../img/test2/page/case4/page-08.gif',
+    '../img/test2/page/share/page-09.png',
+    '../img/test2/page/share/page-10.png',
+    '../img/test2/page/share/page-11.png',
+    '../img/test2/page/share/page-12.png',
+    '../img/test2/page/share/page-13.png',
+    '../img/test2/page/share/page-14.png',
+    '../img/test2/page/share/page-15.png',
+    '../img/test2/page/share/page-16.png',
+    '../img/test2/page/share/page-17.png',
+    '../img/test2/page/share/page-18.png',
+    '../img/test2/page/share/page-19.png',
+    '../img/test2/page/share/page-20.png',
+    '../img/test2/page/share/page-21.png',
+    '../img/test2/page/share/page-22.png'
+  ]
 ]
 
-preloading(imgList)
+preloading(imgList, test1resultIdx)
 
 
 const resultCase = [
   '한',
   '이',
-  '김',
-  '차'
+  '차',
+  '김'
 ]
 
 const qnaList = [
@@ -50,32 +146,32 @@ const qnaList = [
     ]
   },
   {
-    q: '당신의 <b>소울메이트</b>가 있을 []씨 식구들이<br>인사를 하고 싶다고 찾아왔어요.',
+    q: '당신의 <b>소울메이트</b>가 있을 '+resultCase[test1resultIdx]+'씨 식구들이<br>인사를 하고 싶다고 찾아왔어요.',
     a: [
       {answer: '들어볼래요!'}
     ]
   },
   {
-    q: '<b>[]봄입니다.</b>🌱<br>소울메이트가 찾아온다니 새로운 기분이네요.<br>저희 집에서 편안히 찾아보다 가세요.:)',
+    q: '<b>'+resultCase[test1resultIdx]+'봄입니다.</b>🌱<br>소울메이트가 찾아온다니 새로운 기분이네요.<br>저희 집에서 편안히 찾아보다 가세요.:)',
     a: [
       {answer: '다음으로'}
     ]
   },
   {
-    q: '<b>[]여름입니다</b>🌞<br>우리가 서로의 소울메이트라면 좋겠네요.<br>같이 여러가지 해보면서 재미있게 찾아봐요!',
+    q: '<b>'+resultCase[test1resultIdx]+'여름입니다</b>🌞<br>우리가 서로의 소울메이트라면 좋겠네요.<br>같이 여러가지 해보면서 재미있게 찾아봐요!',
     a: [
       {answer: '다음으로'}
     ]
   },
   {
-    q: '<b>[]가을입니다</b>🎑<br>우리가 서로의 소울메이트라면 통하는게 있겠죠!<br>함께 노력하면 금방 찾을거에요!',
+    q: '<b>'+resultCase[test1resultIdx]+'가을입니다</b>🎑<br>우리가 서로의 소울메이트라면 통하는게 있겠죠!<br>함께 노력하면 금방 찾을거에요!',
     a: [
       {answer: '다음으로'},
       {answer: '저 또한 지금 그런 상태에요.'}
     ]
   },
   {
-    q: '<b>[]겨울입니다⛄</b><br>지내다 보면 서로의 소울메이트를 만날거에요.<br>소울메이트를 만난다니... 꼭 응원할게요!',
+    q: '<b>'+resultCase[test1resultIdx]+'겨울입니다⛄</b><br>지내다 보면 서로의 소울메이트를 만날거에요.<br>소울메이트를 만난다니... 꼭 응원할게요!',
     a: [
       {answer: '다음으로'}
     ]
@@ -108,7 +204,16 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q1.<br>T:메이트 여러분들은 각자 <b>좋아하는게</b> 있나요?',
+    q: 'Q1.<br>T:메이트 여러분들 준비됐나요? 긴장되시죠.. 이런 자리 어색하실텐데.. 자신 있나요?',
+    a: [
+      {answer: '네 물론입니다! 평소에도 자신감 넘치는 편이거든요!'},
+      {answer: '평소에 자신감이 넘치는 건 아니지만.. 열심히 해볼게요!'},
+      {answer: '저는 저를 되게 믿는 편이에요! 잘 하리라 생각해요!'},
+      {answer: '계속 자존감을 높이고 싶었는데 말처럼 쉽지 만은 않은 것 같아요. 그래도 오랜만에 이런 자리니 최선을 다할게요!'}
+    ]
+  },
+  {
+    q: 'Q2.<br>T:메이트 여러분들은 각자 <b>좋아하는게</b> 있나요?',
     a: [
       {answer: '네 저는 있어요!'},
       {answer: '요즘 그것에 고민이 많아요.<br>잘 모르겠더라고요.'},
@@ -117,7 +222,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q2.<br>T:메이트 여러분들은 언제 가장 <b>행복</b>한가요?',
+    q: 'Q3.<br>T:메이트 여러분들은 언제 가장 <b>행복</b>한가요?',
     a: [
       {answer: '그냥 돈을 많이 벌거나, 로또 당첨?<br>아니면 엄청 맛있는 음식을 먹거나요!'},
       {answer: '저는 좋아하는 날씨나, 음악이 들릴 때<br>혼자 엄청 행복해지고는 해요!'},
@@ -126,7 +231,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q3.<br>T:그렇다면 그 <b>행복</b>을 요즘도 누리고 계신가요?',
+    q: 'Q4.<br>T:그렇다면 그 <b>행복</b>을 요즘도 누리고 계신가요?',
     a: [
       {answer: '스스로 여유가 좀 되어야 하는데<br>일에 집중하고 있어서 미뤄두는 거죠.'},
       {answer: '네, 무엇이든 마음만 먹으면<br>할 수 있다고 생각해요! 저 하기에 달려있죠.'},
@@ -135,7 +240,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q4.<br>T:메이트 여러분들은 <b>친구</b>들과 어떻게 지내나요?',
+    q: 'Q5.<br>T:메이트 여러분들은 <b>친구</b>들과 어떻게 지내나요?',
     a: [
       {answer: '친구들 많아요!<br>아직도 연락 자주 주고 받아요.'},
       {answer: '어릴 땐 몰랐는데 점점 유행만 따르는 것<br>같아서 독고다이 느낌으로 살아요.'},
@@ -144,7 +249,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q5.<br>T:메이트 여러분들이 일을 선택할 때 <b>가장 중요하게 생각하는 것</b>은 무엇인가요?',
+    q: 'Q6.<br>T:메이트 여러분들이 일을 선택할 때 <b>가장 중요하게 생각하는 것</b>은 무엇인가요?',
     a: [
       {answer: '보상이나 보수, 돈이죠.'},
       {answer: '그 일이 저에게 재미있는 일인지<br>먼저 살펴요.'},
@@ -153,7 +258,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q6.<br>T:메이트 여러분들은 <b>완전히 새로운 분야</b>에 발을 들이는 것에 대해 어떻게 생각하시나요?',
+    q: 'Q7.<br>T:메이트 여러분들은 <b>완전히 새로운 분야</b>에 발을 들이는 것에 대해 어떻게 생각하시나요?',
     a: [
       {answer: '저는 언제나 환영입니다!'},
       {answer: '어떤 것이냐에 따라 다르죠?<br>그래도 완전히 새로운 건 걱정이 되네요.'},
@@ -162,7 +267,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q7.<br>T:메이트 여러분들은 <b>좋아하는 일</b>을 하고 있나요?',
+    q: 'Q8.<br>T:메이트 여러분들은 <b>좋아하는 일</b>을 하고 있나요?',
     a: [
       {answer: '네, 하고 있어요, 근데 좀 어렵기는 해요.<br>돈도 들고 시간도 들고 하니까요.'},
       {answer: '네, 하고 있어요!<br>할 수 있도록 도와주는 사람도 많고요.'},
@@ -171,7 +276,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q8.<br>T:메이트 여러분들은 <b>각자 집</b>에서 어떤가요?',
+    q: 'Q9.<br>T:메이트 여러분들은 <b>각자 집</b>에서 어떤가요?',
     a: [
       {answer: '밖에서랑 비슷한 것 같아요.<br>오히려 가족들로부터 종종 위축되기도 해요.'},
       {answer: '저는 가족에게서 에너지를 얻어요.<br>집에 다녀오면 기분도 좋아지고요.'},
@@ -180,7 +285,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q9.<br>T:메이트 여러분들은<br>어떤 사람이 <b>좋은 사람</b>이라고 생각하나요?',
+    q: 'Q10.<br>T:메이트 여러분들은<br>어떤 사람이 <b>좋은 사람</b>이라고 생각하나요?',
     a: [
       {answer: '스스로 행복한 사람이 아닐까요?<br>그리고 그 행복을 나눠주는 사람이요.'},
       {answer: '저는 능력이 먼저라고 생각해요.<br>이상보다는 이성적인 고민이 더 중요하죠.'},
@@ -189,7 +294,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q10.<br>T:메이트 여러분들은 어떤 <b>목표</b>가 있나요?',
+    q: 'Q11.<br>T:메이트 여러분들은 어떤 <b>목표</b>가 있나요?',
     a: [
       {answer: '우선 성공하고 인정 받고 싶어요!<br>그래야 하고 싶은 것도 해보죠!'},
       {answer: '나중에 세계여행을 다니면서<br>책을 써보고 싶은 목표가 있어요.'},
@@ -205,13 +310,39 @@ const qnaList = [
   }
 ]
 
-const resultimgList = [
-  '../img/test2/result/imgBox-case2.png',
-  '../img/test2/result/resultImg-case2.png'
+
+
+const imgBoxList = [
+  '../img/test2/result/case' + String(test1resultIdx+1) + '/imgBox-case1.png',
+  '../img/test2/result/case' + String(test1resultIdx+1) + '/imgBox-case2.png',
+  '../img/test2/result/case' + String(test1resultIdx+1) + '/imgBox-case3.png',
+  '../img/test2/result/case' + String(test1resultIdx+1) + '/imgBox-case4.png'
 ]
 
-var resultText1 = '반가워요! 저는 당신의 소울메이트,<br>한겨울입니다.'
+const resultImgList = [
+  '../img/test2/result/case' + String(test1resultIdx+1) + '/resultImg-case1.png',
+  '../img/test2/result/case' + String(test1resultIdx+1) + '/resultImg-case2.png',
+  '../img/test2/result/case' + String(test1resultIdx+1) + '/resultImg-case3.png',
+  '../img/test2/result/case' + String(test1resultIdx+1) + '/resultImg-case4.png'
+]
 
-var resultText2 = '<b>한겨울</b>⛄은, 이런 사람입니다.<br><br><b>감성</b>에 휘둘리는 편은 아닙니다.<br>스스로 <b>무엇을 좋아하는지</b> 문득 <b>궁금해합니다.</b><br><b>좋아하는 것</b>을 하려면 <b>현실적인 조건</b>부터 채워야 한다고<br>생각합니다.'
+var resultText1 = [
+  '반가워요! 저는 당신의 소울메이트,<br>' + resultCase[test1resultIdx] + '봄입니다.',
+  '반가워요! 저는 당신의 소울메이트,<br>' + resultCase[test1resultIdx] + '여름입니다.',
+  '반가워요! 저는 당신의 소울메이트,<br>' + resultCase[test1resultIdx] + '가을입니다.',
+  '반가워요! 저는 당신의 소울메이트,<br>' + resultCase[test1resultIdx] + '겨울입니다.'
+]
 
-var resultText3 = '당신의 소울메이트가 어떤 사람인지<br>더 궁금하지 않나요?<br><br>당신의 소울메이트,<br>생각보다 더 매력적인 사람일걸요?<br><br><b>천천히 서로에 대해 더 알아가야 합니다.</b><br><br>한겨울도 아직 당신에 대해<br>모르는 것이 많으니까요.<br><br>소울메이트를 찾기 위한<br>👇<b>마지막 테스트로 넘어갑니다</b>👇'
+var resultText2 = [
+  '<b>'+resultCase[test1resultIdx]+'봄</b>🌱은, 이런 사람입니다.<br><br><b>감성</b>에 휘둘리는 편은 아닙니다.<br>스스로 <b>무엇을 좋아하는지</b> 문득 <b>궁금해합니다.</b><br><b>좋아하는 것</b>을 하며 <b>현실적인 조건</b>을 함께 채울 수 있다고<br>생각합니다.',
+  '<b>'+resultCase[test1resultIdx]+'여름</b>🌞은, 이런 사람입니다.<br><br><b>감수성</b>이 풍부한 편입니다.<br>스스로 <b>무엇을 좋아하는지</b> 잘 <b>알고 있습니다.</b><br><b>좋아하는 것</b>을 하며 <b>현실적인 조건</b>을 함께 채울 수 있다고<br>생각합니다.',
+  '<b>'+resultCase[test1resultIdx]+'가을</b>🎑은, 이런 사람입니다.<br><br><b>감수성</b>이 풍부한 편입니다.<br>스스로 <b>무엇을 좋아하는지</b> 잘 <b>알고 있습니다.</b><br><b>좋아하는 것</b>을 하려면 <b>현실적인 조건</b>부터 채워야 한다고<br>생각합니다.',
+  '<b>'+resultCase[test1resultIdx]+'겨울</b>⛄은, 이런 사람입니다.<br><br><b>감성</b>에 휘둘리는 편은 아닙니다.<br>스스로 <b>무엇을 좋아하는지</b> 문득 <b>궁금해합니다.</b><br><b>좋아하는 것</b>을 하려면 <b>현실적인 조건</b>부터 채워야 한다고<br>생각합니다.'
+]
+
+var resultText3 = [
+  '당신의 소울메이트가 어떤 사람인지<br>더 궁금하지 않나요?<br><br>당신의 소울메이트,<br>생각보다 더 매력적인 사람일걸요?<br><br><b>천천히 서로에 대해 더 알아가야 합니다.</b><br><br>'+resultCase[test1resultIdx]+'봄도 아직 당신에 대해<br>모르는 것이 많으니까요.<br><br>소울메이트를 찾기 위한<br>👇<b>마지막 테스트로 넘어갑니다</b>👇',
+  '당신의 소울메이트가 어떤 사람인지<br>더 궁금하지 않나요?<br><br>당신의 소울메이트,<br>생각보다 더 매력적인 사람일걸요?<br><br><b>천천히 서로에 대해 더 알아가야 합니다.</b><br><br>'+resultCase[test1resultIdx]+'여름도 아직 당신에 대해<br>모르는 것이 많으니까요.<br><br>소울메이트를 찾기 위한<br>👇<b>마지막 테스트로 넘어갑니다</b>👇',
+  '당신의 소울메이트가 어떤 사람인지<br>더 궁금하지 않나요?<br><br>당신의 소울메이트,<br>생각보다 더 매력적인 사람일걸요?<br><br><b>천천히 서로에 대해 더 알아가야 합니다.</b><br><br>'+resultCase[test1resultIdx]+'가을도 아직 당신에 대해<br>모르는 것이 많으니까요.<br><br>소울메이트를 찾기 위한<br>👇<b>마지막 테스트로 넘어갑니다</b>👇',
+  '당신의 소울메이트가 어떤 사람인지<br>더 궁금하지 않나요?<br><br>당신의 소울메이트,<br>생각보다 더 매력적인 사람일걸요?<br><br><b>천천히 서로에 대해 더 알아가야 합니다.</b><br><br>'+resultCase[test1resultIdx]+'겨울도 아직 당신에 대해<br>모르는 것이 많으니까요.<br><br>소울메이트를 찾기 위한<br>👇<b>마지막 테스트로 넘어갑니다</b>👇',
+]

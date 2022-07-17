@@ -7,7 +7,7 @@ body {
 }
 
 #main {
-  background-image: url(../img/test3/main/test3-background.jpg);
+  background-image: url(../img/test3/main/share/test3-background.jpg);
   background-size: cover;
   text-align: center;
   color: white;
@@ -16,7 +16,7 @@ body {
 
 #qna {
   display: none;
-  background-image: url(../img/test3/main/test3-background.jpg);
+  background-image: url(../img/test3/main/share/test3-background.jpg);
   background-size: cover;
   text-align: center;
   color: white;

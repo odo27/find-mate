@@ -7,32 +7,33 @@ function preloading(imageArray) {
 }
 
 const imgList = [
-  '../img/test1/page/page-01.png',
-  '../img/test1/page/page-02.png',
-  '../img/test1/page/page-03.png',
-  '../img/test1/page/page-04.jpg',
-  '../img/test1/page/page-05.gif',
-  '../img/test1/page/page-06.gif',
-  '../img/test1/page/page-07.gif',
-  '../img/test1/page/page-08.png',
-  '../img/test1/page/page-09.png',
-  '../img/test1/page/page-10.png',
-  '../img/test1/page/page-11.gif',
-  '../img/test1/page/page-12.gif',
-  '../img/test1/page/page-13.gif',
-  '../img/test1/page/page-14.png',
-  '../img/test1/page/page-15.png',
-  '../img/test1/page/page-16.png',
-  '../img/test1/page/page-17.png',
-  '../img/test1/page/page-18.png',
-  '../img/test1/page/page-19.png',
-  '../img/test1/page/page-20.png',
-  '../img/test1/page/page-21.png',
-  '../img/test1/page/page-22.png',
-  '../img/test1/page/page-23.png',
-  '../img/test1/page/page-24.png',
-  '../img/test1/page/page-25.png',
-  '../img/test1/page/page-26.png'
+  '../img/test1/page/share/page-01.png',
+  '../img/test1/page/share/page-02.png',
+  '../img/test1/page/share/page-03.png',
+  '../img/test1/page/share/page-04.jpg',
+  '../img/test1/page/share/page-05.gif',
+  '../img/test1/page/share/page-06.gif',
+  '../img/test1/page/share/page-07.gif',
+  '../img/test1/page/share/page-08.png',
+  '../img/test1/page/share/page-09.png',
+  '../img/test1/page/share/page-10.png',
+  '../img/test1/page/share/page-11.gif',
+  '../img/test1/page/share/page-12.gif',
+  '../img/test1/page/share/page-13.gif',
+  '../img/test1/page/share/page-14.png',
+  '../img/test1/page/share/page-15.png',
+  '../img/test1/page/share/page-16.png',
+  '../img/test1/page/share/page-17.png',
+  '../img/test1/page/share/page-18.png',
+  '../img/test1/page/share/page-19.png',
+  '../img/test1/page/share/page-20.png',
+  '../img/test1/page/share/page-21.png',
+  '../img/test1/page/share/page-22.png',
+  '../img/test1/page/share/page-23.png',
+  '../img/test1/page/share/page-24.png',
+  '../img/test1/page/share/page-25.png',
+  '../img/test1/page/share/page-26.png',
+  '../img/test1/page/share/page-27.png'
 ]
 
 preloading(imgList)
@@ -206,7 +207,16 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q9.<br>T:현실적으로,<br>메이트님 댁의 경제적인 상황은 대략 어떻게 되나요?',
+    q: 'Q9.<br>T:메이트님 댁은 서로 다툰 적은 없나요?',
+    a: [
+      {answer: '왜 없겠어요.. 어느 집안이나 그렇듯 다 있죠.. 그 때, 정말 힘들었어요. 그래도 덕분에 지금 잘 지내겠죠?'},
+      {answer: '크게 다툰 적은 없는 것 같은데요? 오히려 평소에 자기 생각이 있으면 다들 잘 표현하는 편이라 서로 그 때 그 때 잘 푸는 것 같아요!'},
+      {answer: '크게 다툰 적은 없던 것 같아요. 누군가는 속으로 좀 참으면서 싸우기 자체를 싫어하는 것 같기도 해요.'},
+      {answer: '어느 집이나 있지 않을까요? 그래도 서로 생각도 나누고 오히려 저는 좋은 시간이었어요.'}
+    ]
+  },
+  {
+    q: 'Q10.<br>T:현실적으로,<br>메이트님 댁의 경제적인 상황은 대략 어떻게 되나요?',
     a: [
       {answer: '부족한지는 잘 모르겠는데 저희 집은<br>큰 신경을 쏟지 않아도 괜찮더라고요.'},
       {answer: '다 고만고만할거에요. 하고 싶은 일들<br>참으면서 차곡차곡 모아야죠.'},
@@ -215,7 +225,7 @@ const qnaList = [
     ]
   },
   {
-    q: 'Q10.<br>T:메이트님 댁에서는<br>다른 집이나 친구들과 교류를 하기도 하나요?',
+    q: 'Q11.<br>T:메이트님 댁에서는<br>다른 집이나 친구들과 교류를 하기도 하나요?',
     a: [
       {answer: '자주 하죠. 서로 근황도 나누고요.'},
       {answer: '자주 모이는 편이죠! 근데 또 막상<br>만나고 오면 기가 꺽여 오기도 해요.'},
@@ -232,13 +242,37 @@ const qnaList = [
 ]
 
 
-const resultimgList = [
-  '../img/test1/result/imgBox-case1.png',
-  '../img/test1/result/resultImg-case1.png'
+const imgBoxList = [
+  '../img/test1/result/share/imgBox-case1.png',
+  '../img/test1/result/share/imgBox-case2.png',
+  '../img/test1/result/share/imgBox-case3.png',
+  '../img/test1/result/share/imgBox-case4.png'
 ]
 
-var resultText1 = '당신의 소울메이트는..<br>[]씨네 집에 살고 있습니다.'
+const resultImgList = [
+  '../img/test1/result/share/resultImg-case1.png',
+  '../img/test1/result/share/resultImg-case2.png',
+  '../img/test1/result/share/resultImg-case3.png',
+  '../img/test1/result/share/resultImg-case4.png'
+]
 
-var resultText2 = '<b>우리 집 가훈</b><br>[]<br><br><b>[]봄, []여름, []가을, []겨울이</b><br><b>오손도손 살고 있습니다.</b>'
+var resultText1 = [
+  '당신의 소울메이트는..<br>한씨네 집에 살고 있습니다.',
+  '당신의 소울메이트는..<br>이씨네 집에 살고 있습니다.',
+  '당신의 소울메이트는..<br>차씨네 집에 살고 있습니다.',
+  '당신의 소울메이트는..<br>김씨네 집에 살고 있습니다.'
+]
 
-var resultText3 = '[]씨네 집<br>편안하고 차분한 한옥집입니다.<br>여기에는 <b>네 명의 메이트</b>가 살고 있어요!<br>당신의 메이트를 찾아서<br>어서 다음 테스트를 하러 가요!<br><br>다음 테스트를 마치면 한씨네 가족들 중<br><b>누가 내 소울메이트인지</b> 확인할 수 있어요.'
+var resultText2 = [
+  '<b>우리 집 가훈</b><br>"위대한 도전은 이곳에서 시작한다."<br><br><b>한봄, 한여름, 한가을, 한겨울이</b><br><b>오손도손 살고 있습니다.</b>',
+  '<b>우리 집 가훈</b><br>"물 흐르듯이 살자."<br><br><b>이봄, 이여름, 이가을, 이겨울이</b><br><b>오손도손 살고 있습니다.</b>',
+  '<b>우리 집 가훈</b><br>"역경이 있어도 열정은 잃지 말자"<br><br><b>차봄, 차여름, 차가을, 차겨울이</b><br><b>오손도손 살고 있습니다.</b>',
+  '<b>우리 집 가훈</b><br>"무모함에 낭비하는 시간은 사치다."<br><br><b>김봄, 김여름, 김가을, 김겨울이</b><br><b>오손도손 살고 있습니다.</b>'
+]
+
+var resultText3 = [
+  '한씨네 집<br>편안하고 차분한 한옥집입니다.<br>여기에는 <b>네 명의 메이트</b>가 살고 있어요!<br>당신의 메이트를 찾아서<br>어서 다음 테스트를 하러 가요!<br><br>다음 테스트를 마치면 한씨네 가족들 중<br><b>누가 내 소울메이트인지</b> 확인할 수 있어요.',
+  '이씨네 집<br>익숙하고 포근한 가정집입니다.<br>여기에는 <b>네 명의 메이트</b>가 살고 있어요!<br>당신의 메이트를 찾아서<br>어서 다음 테스트를 하러 가요!<br><br>다음 테스트를 마치면 이씨네 가족들 중<br><b>누가 내 소울메이트인지</b> 확인할 수 있어요.',
+  '차씨네 집<br>아늑하면서도 감성있는 주택입니다.<br>여기에는 <b>네 명의 메이트</b>가 살고 있어요!<br>당신의 메이트를 찾아서<br>어서 다음 테스트를 하러 가요!<br><br>다음 테스트를 마치면 차씨네 가족들 중<br><b>누가 내 소울메이트인지</b> 확인할 수 있어요.',
+  '김씨네 집<br>튼튼하고 안전한 개인주택입니다.<br>여기에는 <b>네 명의 메이트</b>가 살고 있어요!<br>당신의 메이트를 찾아서<br>어서 다음 테스트를 하러 가요!<br><br>다음 테스트를 마치면 김씨네 가족들 중<br><b>누가 내 소울메이트인지</b> 확인할 수 있어요.',
+]

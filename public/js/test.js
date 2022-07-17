@@ -4,6 +4,7 @@ const endPoint = qnaList.length;
 const select = [];
 var testIdx = 0;
 var g_qIdx = 0;
+let resultIdx = 0;
 
 setScreenSize();
 window.addEventListener('resize', () => setScreenSize());
@@ -21,11 +22,14 @@ function goFinal() {
 }
 
 function goTest3() {
-  window.location.href = "../html/test3.html";
+  const test1resultIdx = parseInt(location.href.split('?')[1]);
+  let test3location = "../html/test3.html?"+String(test1resultIdx)+"?"+String(resultIdx)+"?"+String(cScore)+"?"+String(fcScore);
+  window.location.href = test3location;
 }
 
 function goTest2() {
-  window.location.href = "../html/test2.html";
+  let test2location = "../html/test2.html?"+String(resultIdx)+"?"+String(cScore)+"?"+String(fcScore)+"?"+String(rcScore);
+  window.location.href = test2location;
 }
 
 function goTest1() {
@@ -35,8 +39,15 @@ function goTest1() {
 function goResult() {
 
   saveDB(testIdx, select);
+  resultIdx = calResult(testIdx, select);
 
+  if (testIdx==1) {
+    document.getElementById('goTest3Btn').innerHTML = test1case[parseInt(location.href.split('?')[1])] + test2case[resultIdx] + '에 대해 더 알아가기'
+  }
 
+  else if (testIdx==2) {
+    document.getElementById('goFinalBtn').innerHTML = test3case[resultIdx] + ' ' + test1case[parseInt(location.href.split('?')[1])] + test2case[parseInt(location.href.split('?')[2])] + '의 선물 보러가기'
+  }
   qna.style.WebkitAnimation = "fadeOut 1s";
   qna.style.animation = "fadeOut 1s";
   setTimeout(() => {
@@ -48,15 +59,15 @@ function goResult() {
     }, 450)
 
     var imgBox = document.getElementById("imgBox");
-    imgBox.src = resultimgList[0];
+    imgBox.src = imgBoxList[resultIdx];
     var resultImg = document.getElementById("resultImg");
-    resultImg.src = resultimgList[1];
+    resultImg.src = resultImgList[resultIdx];
     var resultBox1 = document.querySelector('.resultText1');
-    resultBox1.innerHTML = resultText1;
+    resultBox1.innerHTML = resultText1[resultIdx];
     var resultBox2 = document.querySelector('.resultText2');
-    resultBox2.innerHTML = resultText2;
+    resultBox2.innerHTML = resultText2[resultIdx];
     var resultBox3 = document.querySelector('.resultText3');
-    resultBox3.innerHTML = resultText3;
+    resultBox3.innerHTML = resultText3[resultIdx];
 
   }, 450);
 }
@@ -195,7 +206,15 @@ function goNext(qIdx) {
     var imgLayout = document.querySelector('.imgLayout');
     var pageImg = document.createElement('img');
     pageImg.id = "imgId"+qIdx;
-    pageImg.src = imgList[qIdx];
+    if (testIdx == 0) {
+      pageImg.src = imgList[qIdx];
+    }
+    else if (testIdx == 1) {
+      pageImg.src = imgList[test1resultIdx][qIdx];
+    }
+    else {
+      pageImg.src = imgList[qIdx];
+    }
     pageImg.style.width = "100%";
     pageImg.style.objectFit = "cover";
     pageImg.classList.add('fadeIn');
