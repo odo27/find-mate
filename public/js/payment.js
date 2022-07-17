@@ -1,8 +1,10 @@
 var IMP = window.IMP;
+// This parameter has a unique value of users
 IMP.init("imp56407262");
 
 function requestPay() {
-      // IMP.request_pay(param, callback) 결제창 호출
+      // IMP.request_pay(param, callback)
+      // calling a payment window
       IMP.request_pay({ // param
           pg: "html5_inicis",
           pay_method: "card",

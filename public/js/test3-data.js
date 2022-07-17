@@ -1,7 +1,11 @@
+// take test1's result using url parsing
 const test1resultIdx = parseInt(location.href.split('?')[1]);
+// take test2's result using url parsing
 const test2resultIdx = parseInt(location.href.split('?')[2]);
+// make string that indicate path of a main image of pages
 const pagePath = '../img/test3/page/case'+String(test1resultIdx+1)+'/case'+String(test2resultIdx+1)+'/';
 
+// set string of test1's result
 const test1case = [
   '한',
   '이',
@@ -9,6 +13,7 @@ const test1case = [
   '김'
 ]
 
+// set string of test2's result
 const test2case = [
   '봄',
   '여름',
@@ -16,6 +21,7 @@ const test2case = [
   '겨울'
 ]
 
+// set string of test3's result
 const test3case = [
   '따뜻한',
   '집중하는',
@@ -23,12 +29,15 @@ const test3case = [
   '현실적인'
 ]
 
+// set main section's image
 setMainImg(test1resultIdx, test2resultIdx);
 
+// set testMainImg's source with test3's result
 function setMainImg(resultIdx1, resultIdx2){
   document.getElementById('testMainImg').src = "../img/test3/main/case" + String(resultIdx1+1) + "/case"+ String(resultIdx2+1) + "/test3-main.png";
 }
 
+// function for loading images to browser
 function preloading(imageArray) {
   let n = imageArray.length;
   for (let i = 0; i < n; i++) {
@@ -37,6 +46,7 @@ function preloading(imageArray) {
   }
 }
 
+// main image's sources of a page
 const imgList = [
   '../img/test3/page/share/page-01.png',
   '../img/test3/page/share/page-02.gif',
@@ -68,8 +78,10 @@ const imgList = [
   pagePath+'page-fire.png'
 ]
 
+// preloading images to browser for showing images faster
 preloading(imgList)
 
+// question and answer array of test3
 const qnaList = [
   {
     q: '드디어 서로의 소울메이트를 만나셨군요!<br><b>진심으로 축하드려요:)</b>',
@@ -265,6 +277,12 @@ const qnaList = [
   }
 ]
 
+// case1 : Warm
+// case2 : Concentrate
+// case3 : Empathy
+// case4 : Realistic
+
+// paths of header image in result section of test3
 const imgBoxList = [
   '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/imgBox-case1.png',
   '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/imgBox-case2.png',
@@ -272,6 +290,7 @@ const imgBoxList = [
   '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/imgBox-case4.png'
 ]
 
+// paths of main image in result section of test3
 const resultImgList = [
   '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/resultImg-case1.png',
   '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/resultImg-case2.png',
@@ -279,6 +298,7 @@ const resultImgList = [
   '../img/test3/result/case' + String(test1resultIdx+1) + '/case' + String(test2resultIdx+1) + '/resultImg-case4.png'
 ]
 
+// result texts in result section of test2
 var resultText1 = [
   '.<br>.<br>',
   '.<br>.<br>',

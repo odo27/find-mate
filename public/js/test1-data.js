@@ -1,3 +1,4 @@
+// function for loading images to browser
 function preloading(imageArray) {
   let n = imageArray.length;
   for (let i = 0; i < n; i++) {
@@ -6,6 +7,7 @@ function preloading(imageArray) {
   }
 }
 
+// main image's sources of a page
 const imgList = [
   '../img/test1/page/share/page-01.png',
   '../img/test1/page/share/page-02.png',
@@ -36,8 +38,10 @@ const imgList = [
   '../img/test1/page/share/page-27.png'
 ]
 
+// preloading images to browser for showing images faster
 preloading(imgList)
 
+// question and answer array of test1
 const qnaList = [
   {
     q: '반갑습니다.<br>당신의 소울메이트를 찾기 위해<br><b>가이드 T가 함께합니다.</b>',
@@ -241,7 +245,12 @@ const qnaList = [
   }
 ]
 
+// case1 : Hans House
+// case2 : Lees House
+// case3 : Chas House
+// case4 : Kims House
 
+// paths of header image in result section of test1
 const imgBoxList = [
   '../img/test1/result/share/imgBox-case1.png',
   '../img/test1/result/share/imgBox-case2.png',
@@ -249,6 +258,7 @@ const imgBoxList = [
   '../img/test1/result/share/imgBox-case4.png'
 ]
 
+// paths of main image in result section of test1
 const resultImgList = [
   '../img/test1/result/share/resultImg-case1.png',
   '../img/test1/result/share/resultImg-case2.png',
@@ -256,6 +266,7 @@ const resultImgList = [
   '../img/test1/result/share/resultImg-case4.png'
 ]
 
+// result texts in result section of test1
 var resultText1 = [
   '당신의 소울메이트는..<br>한씨네 집에 살고 있습니다.',
   '당신의 소울메이트는..<br>이씨네 집에 살고 있습니다.',

@@ -1,5 +1,7 @@
+// take test1's result using url parsing
 const test1resultIdx = parseInt(location.href.split('?')[1]);
 
+// set string of test1's result
 const test1case = [
   '한',
   '이',
@@ -7,6 +9,7 @@ const test1case = [
   '김'
 ]
 
+// set string of test2's result
 const test2case = [
   '봄',
   '여름',
@@ -14,12 +17,15 @@ const test2case = [
   '겨울'
 ]
 
+// set main section's image
 setMainImg(test1resultIdx);
 
+// set testMainImg's source with test1's result
 function setMainImg(resultIdx){
   document.getElementById('testMainImg').src = "../img/test2/main/case" + String(resultIdx+1) + "/test2-main.png";
 }
 
+// function for loading images to browser
 function preloading(imageArray, resultIdx) {
   let n = imageArray[resultIdx].length;
   for (let i = 0; i < n; i++) {
@@ -28,6 +34,7 @@ function preloading(imageArray, resultIdx) {
   }
 }
 
+// main image's sources of a page
 const imgList = [
   [
     '../img/test2/page/case1/page-01.png',
@@ -127,9 +134,10 @@ const imgList = [
   ]
 ]
 
+// preloading images to browser for showing images faster
 preloading(imgList, test1resultIdx)
 
-
+// set string of test1's result
 const resultCase = [
   '한',
   '이',
@@ -137,6 +145,7 @@ const resultCase = [
   '김'
 ]
 
+// question and answer array of test2
 const qnaList = [
   {
     q: '그대의 소울메이트가 사는 집을 찾았군요!<br><b>집이 마음에 드시나요?</b>',
@@ -310,8 +319,12 @@ const qnaList = [
   }
 ]
 
+// case1 : Spring
+// case2 : Summer
+// case3 : Fall
+// case4 : Winter
 
-
+// paths of header image in result section of test1
 const imgBoxList = [
   '../img/test2/result/case' + String(test1resultIdx+1) + '/imgBox-case1.png',
   '../img/test2/result/case' + String(test1resultIdx+1) + '/imgBox-case2.png',
@@ -319,6 +332,7 @@ const imgBoxList = [
   '../img/test2/result/case' + String(test1resultIdx+1) + '/imgBox-case4.png'
 ]
 
+// paths of main image in result section of test1
 const resultImgList = [
   '../img/test2/result/case' + String(test1resultIdx+1) + '/resultImg-case1.png',
   '../img/test2/result/case' + String(test1resultIdx+1) + '/resultImg-case2.png',
@@ -326,6 +340,7 @@ const resultImgList = [
   '../img/test2/result/case' + String(test1resultIdx+1) + '/resultImg-case4.png'
 ]
 
+// result texts in result section of test2
 var resultText1 = [
   '반가워요! 저는 당신의 소울메이트,<br>' + resultCase[test1resultIdx] + '봄입니다.',
   '반가워요! 저는 당신의 소울메이트,<br>' + resultCase[test1resultIdx] + '여름입니다.',
