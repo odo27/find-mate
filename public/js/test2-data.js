@@ -1,3 +1,18 @@
+// make object for sending this table name to server ( app.js )
+var sqlObj = {
+  // I take query in app.js with key: 'table'
+  table : 'test2'
+};
+// fetch to /count using POST method with format of json
+fetch("/count", {
+  method : "POST",
+  headers : {
+    "Content-Type": "application/json"
+  },
+  body : JSON.stringify(sqlObj)
+}).then(res=>res.json())
+.then(response => document.getElementById('test2UserCount').innerHTML = '현재 총 ' + String(response) + '명이 참여했습니다.');
+
 // take test1's result using url parsing
 const test1resultIdx = parseInt(location.href.split('?')[1]);
 

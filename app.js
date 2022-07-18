@@ -36,13 +36,14 @@ app.get('/', function(req, res) {
 
 // save to db with a query
 app.post('/save', function(req, res) {
-
-  console.log(req.body.query);
-
   connection.query(req.body.query, function(err, results, fields){
-      if (err) {
-          console.log(err);
-      }
-      console.log(results);
+  });
+});
+
+// select user counts from db
+app.post('/count', function(req, res) {
+  var query = "SELECT COUNT(*) as CNT FROM " + req.body.table;
+  connection.query(query, function(err, results, fields){
+    res.send(String(results[0].CNT));
   });
 });
