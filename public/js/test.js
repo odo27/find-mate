@@ -27,6 +27,21 @@ function setScreenSize() {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
+function bgmOff() {
+  var audioElement = document.getElementById('audioElement');
+  audioElement.pause();
+  var audioButton = document.getElementById('audioButton');
+  audioButton.src = "../img/audio/bgm_off.png";
+  audioButton.onclick = bgmOn;
+}
+
+function bgmOn() {
+  var audioElement = document.getElementById('audioElement');
+  audioElement.play();
+  var audioButton = document.getElementById('audioButton');
+  audioButton.src = "../img/audio/bgm_on.png";
+  audioButton.onclick = bgmOff;
+}
 
 // function for going final page
 function goFinal() {
