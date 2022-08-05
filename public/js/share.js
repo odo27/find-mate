@@ -1,6 +1,6 @@
 // this url changes when my ip address changed
 // I have to change url in Kakao Developer and Facebook Developer too
-const url = 'http://220.149.88.26:8080/'
+const url = 'http://34.64.142.131:8080/'
 
 // function for sharing in Kakao using Kakao api
 function kakaoShare() {

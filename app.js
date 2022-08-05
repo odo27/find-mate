@@ -8,9 +8,9 @@ var bodyParser = require('body-parser');
 const mysql = require('mysql');
 // database informations
 const conn = {
-    host:'localhost',
+    host:'34.64.245.91',
     port:'3306',
-    user:'root',
+    user:'odo27',
     password:'qwerasdf12',
     database:'find-mate'
 };
