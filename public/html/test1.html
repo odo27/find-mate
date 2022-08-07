@@ -89,7 +89,10 @@
           <div class="imgLayout mx-auto pt-3" style="height: 70%;">
 
           </div>
-          <div class="qBox" style="height: 30%;">
+          <div style="height: 5%;">
+
+          </div>
+          <div class="qBox" style="height: 25%;">
           </div>
           <div class="dateLayout">
             <input type="date" id="dateBox" style="color: black;">
@@ -119,15 +122,16 @@
           친구에게 테스트 공유하기<br>
         </div>
         <div class="col-5 mx-auto mb-5">
-          <img src="../img/share/facebook.png" alt="facebook" class="col-2">
-          <img src="../img/share/twitter.png" alt="twitter" class="col-2">
-          <img src="../img/share/kakao.png" alt="kakao" class="col-2">
+          <img src="../img/share/facebook.png" alt="facebook" class="col-2" onclick="js:facebookShare()">
+          <img src="../img/share/twitter.png" alt="twitter" class="col-2" onclick="js:twitterShare()">
+          <img src="../img/share/kakao.png" alt="kakao" class="col-2" onclick="js:kakaoShare()">
+          <!--<img src="../img/share/link.png" alt="link" class="col-2" onclick="js:linkShare()">-->
           <img src="../img/share/link.png" alt="link" class="col-2">
         </div>
       </div>
       <div class="functionBox">
         <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3">모든 결과 보기</button>
-        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3">테스트 다시하기</button>
+        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" onclick="js:goTest1()">테스트 다시하기</button>
       </div>
     </section>
     <script src="../js/test1-data.js" charset="utf-8"></script>
