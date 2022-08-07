@@ -56,6 +56,49 @@ const imgList = [
 // preloading images to browser for showing images faster
 preloading(imgList)
 
+// set string of test1's result
+const test1case = [
+  '한',
+  '이',
+  '차',
+  '김'
+]
+
+window.addEventListener('resize', () => setAllResultSize());
+
+function setAllResultSize() {
+  var resultWidth = document.querySelector('#result').clientWidth * 0.9;
+  console.log(resultWidth);
+  var allTestResult = document.querySelector('.allTestResult');
+  allTestResult.style.width = String(resultWidth)+'px';
+}
+
+function showAllResult() {
+  console.log("show all result!!");
+  var allResult = document.querySelector('#allResult');
+  allResult.style.display = 'block';
+  setAllResultSize();
+  document.addEventListener('mouseup', function(e) {
+    if (!allResult.contains(e.target)) {
+      var children = document.querySelectorAll('.testResultList');
+      for (let i = 0; i < children.length; i++) {
+        children[i].style.display = 'none';
+      }
+      allResult.style.display = 'none';
+    }
+  })
+  var allResultButtonLayout = document.querySelector('.allResultButtonLayout');
+  for (let i = 0; i < 4; i++) {
+    var testResult = document.createElement('button');
+    testResult.classList.add('testResultList');
+    testResult.classList.add('my-3');
+    testResult.style.width = '100%';
+    testResult.innerHTML = '당신의 소울메이트는..<br>'+test1case[i]+'씨네 집에 살고 있습니다.'
+    allResultButtonLayout.appendChild(testResult);
+  }
+}
+
+
 // question and answer array of test1
 const qnaList = [
   {
