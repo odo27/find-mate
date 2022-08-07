@@ -339,6 +339,8 @@ function begin(testNum) {
   // main section fade out with animation
   main.style.WebkitAnimation = "fadeOut 1s";
   main.style.animation = "fadeOut 1s";
+
+  bgmOn();
   setTimeout(() => {
     // qna section fade in with animation
     qna.style.WebkitAnimation = "fadeIn 1s";
