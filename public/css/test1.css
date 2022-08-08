@@ -2,6 +2,10 @@ body {
   background-color: rgb(2, 26, 54);
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   font-family: 'GowunDodum-Regular';
 }
@@ -161,6 +165,10 @@ body {
   width: 90%;
   background-color: white;
   border-radius: 20px;
+}
+
+.allTestResult::-webkit-scrollbar {
+  display: none;
 }
 
 .allResultButtonLayout {

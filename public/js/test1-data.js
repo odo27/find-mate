@@ -71,7 +71,9 @@ function setAllResultSize() {
   console.log(resultWidth);
   var allTestResult = document.querySelector('.allTestResult');
   allTestResult.style.width = String(resultWidth)+'px';
+  allTestResult.style.height = '100%';
   var allResult = document.querySelector('#allResult');
+  allResult.style.height = String(window.innerHeight * 0.8) + 'px';
   allResult.style.left = String(document.body.clientWidth * 0.5)+'px';
   console.log('window.innerHeight: ', window.innerHeight);
   console.log(window.scrollY);
@@ -94,6 +96,7 @@ function showAllResult() {
     }
   });
   document.querySelector('body').style.overflow = 'hidden';
+  document.querySelector('.allTestResult').style.overflow = 'auto';
   var allResultButtonLayout = document.querySelector('.allResultButtonLayout');
   for (let i = 0; i < 4; i++) {
     var testResult = document.createElement('button');
