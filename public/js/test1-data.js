@@ -71,6 +71,11 @@ function setAllResultSize() {
   console.log(resultWidth);
   var allTestResult = document.querySelector('.allTestResult');
   allTestResult.style.width = String(resultWidth)+'px';
+  var allResult = document.querySelector('#allResult');
+  allResult.style.left = String(document.body.clientWidth * 0.5)+'px';
+  console.log('window.innerHeight: ', window.innerHeight);
+  console.log(window.scrollY);
+  allResult.style.top = String(window.innerHeight * 0.5 + window.scrollY)+'px';
 }
 
 function showAllResult() {
@@ -85,15 +90,28 @@ function showAllResult() {
         children[i].style.display = 'none';
       }
       allResult.style.display = 'none';
+      document.querySelector('body').style.overflow = 'auto';
     }
-  })
+  });
+  document.querySelector('body').style.overflow = 'hidden';
   var allResultButtonLayout = document.querySelector('.allResultButtonLayout');
   for (let i = 0; i < 4; i++) {
     var testResult = document.createElement('button');
     testResult.classList.add('testResultList');
     testResult.classList.add('my-3');
-    testResult.style.width = '100%';
-    testResult.innerHTML = '당신의 소울메이트는..<br>'+test1case[i]+'씨네 집에 살고 있습니다.'
+    var imgDiv = document.createElement('div');
+    var textDiv = document.createElement('div');
+    var arrowDiv = document.createElement('div');
+    imgDiv.classList.add('imgDiv');
+    imgDiv.classList.add('px-3');
+    imgDiv.classList.add('py-3');
+    imgDiv.innerHTML = '<img src="'+imgBoxList[i]+'" alt="" class="imgBoxList img-fluid">';
+    textDiv.classList.add('textDiv');
+    textDiv.innerHTML = '전체 결과 중 25%<br>당신의 소울메이트는..<br>'+test1case[i]+'씨네 집에 살고 있습니다.';
+    arrowDiv.innerHTML = '>';
+    testResult.appendChild(imgDiv);
+    testResult.appendChild(textDiv);
+    testResult.appendChild(arrowDiv);
     allResultButtonLayout.appendChild(testResult);
   }
 }

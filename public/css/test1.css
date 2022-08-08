@@ -153,8 +153,7 @@ body {
 #allResult {
   display:none;
   position: absolute;
-  top: 50%;
-  left: 50%;
+
   transform: translate(-50%, -50%);
 }
 
@@ -166,6 +165,28 @@ body {
 
 .allResultButtonLayout {
   width: 100%;
+}
+
+.testResultList {
+  width: 100%;
+  border-style: none;
+  background-color: rgb(243, 248, 254);
+  border-radius: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.imgBoxList {
+  border-radius: 20px;
+}
+
+.imgDiv {
+  flex: 1;
+}
+
+.textDiv {
+  text-align: left;
+  flex: 4;
 }
 
 @font-face {
