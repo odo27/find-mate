@@ -68,26 +68,13 @@ window.addEventListener('resize', () => setAllResultSize());
 
 function setAllResultSize() {
   var resultWidth = document.querySelector('#result').clientWidth * 0.9;
-
-  console.log('resultWidth:', resultWidth);
-
   var allTestResult = document.querySelector('.allTestResult');
   allTestResult.style.width = String(resultWidth)+'px';
   allTestResult.style.height = '100%';
   var allResult = document.querySelector('#allResult');
   allResult.style.height = String(window.innerHeight * 0.8) + 'px';
-
-  console.log('window.innerHeight * 0.8: ', window.innerHeight * 0.8);
-
   allResult.style.left = String(document.body.clientWidth * 0.5)+'px';
-
-  console.log('document.body.clientWidth * 0.5: ', document.body.clientWidth * 0.5)
-
   allResult.style.top = String(window.innerHeight * 0.5 + window.scrollY)+'px';
-
-  console.log('window.innerHeight * 0.5: ', window.innerHeight * 0.5);
-  console.log('window.scrollY: ', window.scrollY);
-
   var children = document.querySelectorAll('.detailDiv');
   for (let i = 0; i < children.length; i++) {
     children[i].style.height = String(window.innerHeight * 0.3) + 'px';
@@ -95,10 +82,10 @@ function setAllResultSize() {
 }
 
 function showAllResult() {
-  console.log("show all result!!");
   var allResult = document.querySelector('#allResult');
-  console.log(allResult.style.display);
   if (allResult.style.display == 'none') {
+    setAllResultSize();
+    document.querySelector('body').style.overflow = 'hidden';
     allResult.style.display = 'block';
     return;
   }
@@ -117,13 +104,15 @@ function showAllResult() {
     var testResult = document.createElement('button');
     testResult.classList.add('testResultList');
     testResult.classList.add('my-3');
-    testResult.addEventListener('click', function() {
+    testResult.addEventListener('click', function(e) {
       var detailDiv = document.getElementById('detailDiv' + String(i));
-      if (detailDiv.style.display == 'none') {
-        detailDiv.style.display = 'block';
-      }
-      else {
-        detailDiv.style.display = 'none';
+      if (!detailDiv.contains(e.target)) {
+        if (detailDiv.style.display == 'none') {
+          detailDiv.style.display = 'block';
+        }
+        else {
+          detailDiv.style.display = 'none';
+        }
       }
     });
     var topDiv = document.createElement('div');
@@ -135,6 +124,10 @@ function showAllResult() {
     var detailTextDiv = document.createElement('div');
     var detailTextDiv2 = document.createElement('div');
     var detailTestBtn = document.createElement('button');
+    detailTestBtn.addEventListener('click', function() {
+      let test2location = "../html/test2.html?"+String(i)+"?"+String(cScore)+"?"+String(fcScore)+"?"+String(rcScore);
+      window.location.href = test2location;
+    });
     topDiv.classList.add('topDiv');
     imgDiv.classList.add('imgDiv');
     imgDiv.classList.add('px-3');
@@ -145,6 +138,7 @@ function showAllResult() {
     arrowDiv.innerHTML = '>';
     detailDiv.classList.add('detailDiv');
     detailDiv.classList.add('mx-3');
+    detailDiv.classList.add('mb-4');
     detailDiv.id = 'detailDiv' + String(i);
     detailDiv.style.height = String(window.innerHeight * 0.3) + 'px';
     detailDiv.style.display = 'none';
