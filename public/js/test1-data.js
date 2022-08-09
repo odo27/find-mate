@@ -68,29 +68,44 @@ window.addEventListener('resize', () => setAllResultSize());
 
 function setAllResultSize() {
   var resultWidth = document.querySelector('#result').clientWidth * 0.9;
-  console.log(resultWidth);
+
+  console.log('resultWidth:', resultWidth);
+
   var allTestResult = document.querySelector('.allTestResult');
   allTestResult.style.width = String(resultWidth)+'px';
   allTestResult.style.height = '100%';
   var allResult = document.querySelector('#allResult');
   allResult.style.height = String(window.innerHeight * 0.8) + 'px';
+
+  console.log('window.innerHeight * 0.8: ', window.innerHeight * 0.8);
+
   allResult.style.left = String(document.body.clientWidth * 0.5)+'px';
-  console.log('window.innerHeight: ', window.innerHeight);
-  console.log(window.scrollY);
+
+  console.log('document.body.clientWidth * 0.5: ', document.body.clientWidth * 0.5)
+
   allResult.style.top = String(window.innerHeight * 0.5 + window.scrollY)+'px';
+
+  console.log('window.innerHeight * 0.5: ', window.innerHeight * 0.5);
+  console.log('window.scrollY: ', window.scrollY);
+
+  var children = document.querySelectorAll('.detailDiv');
+  for (let i = 0; i < children.length; i++) {
+    children[i].style.height = String(window.innerHeight * 0.3) + 'px';
+  }
 }
 
 function showAllResult() {
   console.log("show all result!!");
   var allResult = document.querySelector('#allResult');
+  console.log(allResult.style.display);
+  if (allResult.style.display == 'none') {
+    allResult.style.display = 'block';
+    return;
+  }
   allResult.style.display = 'block';
   setAllResultSize();
   document.addEventListener('mouseup', function(e) {
     if (!allResult.contains(e.target)) {
-      var children = document.querySelectorAll('.testResultList');
-      for (let i = 0; i < children.length; i++) {
-        children[i].style.display = 'none';
-      }
       allResult.style.display = 'none';
       document.querySelector('body').style.overflow = 'auto';
     }
@@ -102,9 +117,25 @@ function showAllResult() {
     var testResult = document.createElement('button');
     testResult.classList.add('testResultList');
     testResult.classList.add('my-3');
+    testResult.addEventListener('click', function() {
+      var detailDiv = document.getElementById('detailDiv' + String(i));
+      if (detailDiv.style.display == 'none') {
+        detailDiv.style.display = 'block';
+      }
+      else {
+        detailDiv.style.display = 'none';
+      }
+    });
+    var topDiv = document.createElement('div');
     var imgDiv = document.createElement('div');
     var textDiv = document.createElement('div');
     var arrowDiv = document.createElement('div');
+    var detailDiv = document.createElement('div');
+    var detailImgDiv = document.createElement('div');
+    var detailTextDiv = document.createElement('div');
+    var detailTextDiv2 = document.createElement('div');
+    var detailTestBtn = document.createElement('button');
+    topDiv.classList.add('topDiv');
     imgDiv.classList.add('imgDiv');
     imgDiv.classList.add('px-3');
     imgDiv.classList.add('py-3');
@@ -112,9 +143,35 @@ function showAllResult() {
     textDiv.classList.add('textDiv');
     textDiv.innerHTML = '전체 결과 중 25%<br>당신의 소울메이트는..<br>'+test1case[i]+'씨네 집에 살고 있습니다.';
     arrowDiv.innerHTML = '>';
-    testResult.appendChild(imgDiv);
-    testResult.appendChild(textDiv);
-    testResult.appendChild(arrowDiv);
+    detailDiv.classList.add('detailDiv');
+    detailDiv.classList.add('mx-3');
+    detailDiv.id = 'detailDiv' + String(i);
+    detailDiv.style.height = String(window.innerHeight * 0.3) + 'px';
+    detailDiv.style.display = 'none';
+    detailImgDiv.classList.add('detailImgDiv');
+    detailImgDiv.classList.add('py-4');
+    detailImgDiv.innerHTML = '<img src="'+resultImgList[i]+'" alt="" class="resultImgList img-fluid">';
+    detailTextDiv.classList.add('detailTextDiv');
+    detailTextDiv.classList.add('px-4');
+    detailTextDiv.classList.add('pb-5');
+    detailTextDiv.innerHTML = resultText2[i];
+    detailTextDiv2.classList.add('detailTextDiv2');
+    detailTextDiv2.classList.add('px-4');
+    detailTextDiv2.classList.add('py-5');
+    detailTextDiv2.innerHTML = resultText3[i];
+    detailTestBtn.classList.add('detailTestBtn');
+    detailTestBtn.classList.add('mb-5');
+    detailTestBtn.classList.add('mx-auto');
+    detailTestBtn.innerHTML = '나의 소울메이트 찾으러 가기';
+    detailDiv.appendChild(detailImgDiv);
+    detailDiv.appendChild(detailTextDiv);
+    detailDiv.appendChild(detailTextDiv2);
+    detailDiv.appendChild(detailTestBtn);
+    topDiv.appendChild(imgDiv);
+    topDiv.appendChild(textDiv);
+    topDiv.appendChild(arrowDiv);
+    testResult.appendChild(topDiv);
+    testResult.appendChild(detailDiv);
     allResultButtonLayout.appendChild(testResult);
   }
 }
