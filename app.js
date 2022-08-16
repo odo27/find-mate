@@ -8,15 +8,12 @@ var bodyParser = require('body-parser');
 const mysql = require('mysql');
 // database informations
 const conn = {
-    host:'34.64.245.91',
+    host:'localhost',
     port:'3306',
-    user:'odo27',
+    user:'root',
     password:'qwerasdf12',
     database:'find-mate'
 };
-// connect to database
-let connection = mysql.createConnection(conn);
-connection.connect()
 
 // make port with 8080
 app.listen(8080, function() {
@@ -36,14 +33,22 @@ app.get('/', function(req, res) {
 
 // save to db with a query
 app.post('/save', function(req, res) {
+  // connect to database
+  var connection = mysql.createConnection(conn);
+  connection.connect();
   connection.query(req.body.query, function(err, results, fields){
   });
+  connection.end();
 });
 
 // select user counts from db
 app.post('/count', function(req, res) {
+  // connect to database
+  var connection = mysql.createConnection(conn);
+  connection.connect();
   var query = "SELECT COUNT(*) as CNT FROM " + req.body.table;
   connection.query(query, function(err, results, fields){
     res.send(String(results[0].CNT));
   });
+  connection.end();
 });
