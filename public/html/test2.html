@@ -28,7 +28,7 @@
 
       <div class="mLayout">
         <img src="" alt="test2-main" class="img-fluid col-11 mx-auto my-5" style="border-radius: 20px; height: 60%;" id="testMainImg">
-        <div class="mt-4 mb-2" style="height: 10%;"  id="test2UserCount">
+        <div class="mt-4 mb-2" style="height: 10%;" id="test2UserCount">
 
         </div>
       </div>
@@ -48,38 +48,37 @@
 
         <div class="statusLayout mx-auto">
           <div class="prevButton" onclick="js:goPrev()">
-            <
+            < </div>
+              <div class="status">
+                <div class="statusBar">
+
+                </div>
+              </div>
+              <audio loop id="audioElement">
+                <source src="../audio/test1.mp3" type="audio/mp3">
+              </audio>
+              <img src="" alt="" id="audioButton">
           </div>
-          <div class="status">
-            <div class="statusBar">
 
-            </div>
+        </div>
+
+        <div class="mLayout2">
+          <div class="imgLayout mx-auto pt-3" style="height: 70%;">
+
           </div>
-          <audio loop id="audioElement">
-            <source src="../audio/test1.mp3" type="audio/mp3">
-          </audio>
-          <img src="" alt="" id="audioButton">
+          <div style="height: 5%;">
+
+          </div>
+          <div class="qBox" style="height: 25%;">
+
+          </div>
         </div>
 
-      </div>
+        <div class="bLayout2">
+          <div class="answerBox">
 
-      <div class="mLayout2">
-        <div class="imgLayout mx-auto pt-3" style="height: 70%;">
-
+          </div>
         </div>
-        <div style="height: 5%;">
-
-        </div>
-        <div class="qBox" style="height: 25%;">
-
-        </div>
-      </div>
-
-      <div class="bLayout2">
-        <div class="answerBox">
-
-        </div>
-      </div>
     </section>
 
     <section id="result" class="mx-auto mx-auto col-lg-6 col-md-8 col-sm-10 col-xs-12">
@@ -105,20 +104,29 @@
           친구에게 테스트 공유하기<br>
         </div>
         <div class="col-5 mx-auto mb-5">
-          <img src="../img/share/facebook.png" alt="facebook" class="col-2">
-          <img src="../img/share/twitter.png" alt="twitter" class="col-2">
-          <img src="../img/share/kakao.png" alt="kakao" class="col-2">
-          <img src="../img/share/link.png" alt="link" class="col-2">
+          <img src="../img/share/facebook.png" alt="facebook" class="col-2" onclick="js:facebookShare()">
+          <img src="../img/share/twitter.png" alt="twitter" class="col-2" onclick="js:twitterShare()">
+          <img src="../img/share/kakao.png" alt="kakao" class="col-2" onclick="js:kakaoShare()">
+          <img src="../img/share/link.png" alt="link" class="col-2" onclick="js:linkShare()">
         </div>
       </div>
       <div class="functionBox">
-        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3">모든 결과 보기</button>
-        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3">테스트 다시하기</button>
+        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" onclick="js:showAllResult()">모든 결과 보기</button>
+        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" onclick="js:reTest2()">테스트 다시하기</button>
+      </div>
+    </section>
+    <section id="allResult" class="mx-auto">
+      <div class="allTestResult mx-auto px-4 py-4">
+        <h1>모든 결과 보기</h1>
+        <p>데이터는 20분마다 갱신됩니다.</p>
+        <div class="allResultButtonLayout mx-auto">
+        </div>
       </div>
     </section>
     <script src="../js/test2-data.js" charset="utf-8"></script>
     <script src="../js/test.js" charset="utf-8"></script>
     <script src="../js/save-db.js" charset="utf-8"></script>
+    <script src="../js/share.js" charset="utf-8"></script>
     <script src="../js/result.js" charset="utf-8"></script>
   </div>
 </body>

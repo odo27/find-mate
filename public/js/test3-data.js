@@ -96,6 +96,112 @@ const imgList = [
 // preloading images to browser for showing images faster
 preloading(imgList)
 
+window.addEventListener('resize', () => setAllResultSize());
+
+function setAllResultSize() {
+  var resultWidth = document.querySelector('#result').clientWidth * 0.9;
+  var allTestResult = document.querySelector('.allTestResult');
+  allTestResult.style.width = String(resultWidth)+'px';
+  allTestResult.style.height = '100%';
+  var allResult = document.querySelector('#allResult');
+  allResult.style.height = String(window.innerHeight * 0.8) + 'px';
+  allResult.style.left = String(document.body.clientWidth * 0.5)+'px';
+  allResult.style.top = String(window.innerHeight * 0.5 + window.scrollY)+'px';
+  var children = document.querySelectorAll('.detailDiv');
+  for (let i = 0; i < children.length; i++) {
+    children[i].style.height = String(window.innerHeight * 0.3) + 'px';
+  }
+}
+
+function showAllResult() {
+  var allResult = document.querySelector('#allResult');
+  if (allResult.style.display == 'none') {
+    setAllResultSize();
+    document.querySelector('body').style.overflow = 'hidden';
+    allResult.style.display = 'block';
+    return;
+  }
+  allResult.style.display = 'block';
+  setAllResultSize();
+  document.addEventListener('mouseup', function(e) {
+    if (!allResult.contains(e.target)) {
+      allResult.style.display = 'none';
+      document.querySelector('body').style.overflow = 'auto';
+    }
+  });
+  document.querySelector('body').style.overflow = 'hidden';
+  document.querySelector('.allTestResult').style.overflow = 'auto';
+  var allResultButtonLayout = document.querySelector('.allResultButtonLayout');
+  for (let i = 0; i < 4; i++) {
+    var testResult = document.createElement('button');
+    testResult.classList.add('testResultList');
+    testResult.classList.add('my-3');
+    testResult.addEventListener('click', function(e) {
+      var detailDiv = document.getElementById('detailDiv' + String(i));
+      if (!detailDiv.contains(e.target)) {
+        if (detailDiv.style.display == 'none') {
+          detailDiv.style.display = 'block';
+        }
+        else {
+          detailDiv.style.display = 'none';
+        }
+      }
+    });
+    var topDiv = document.createElement('div');
+    var imgDiv = document.createElement('div');
+    var textDiv = document.createElement('div');
+    var arrowDiv = document.createElement('div');
+    var detailDiv = document.createElement('div');
+    var detailImgDiv = document.createElement('div');
+    var detailTextDiv = document.createElement('div');
+    var detailTextDiv2 = document.createElement('div');
+    var detailTestBtn = document.createElement('button');
+    detailTestBtn.addEventListener('click', function() {
+      let finalLocation = "https://www.dancingastro.com/";
+      window.location.href = finalLocation;
+    });
+    topDiv.classList.add('topDiv');
+    imgDiv.classList.add('imgDiv');
+    imgDiv.classList.add('px-3');
+    imgDiv.classList.add('py-3');
+    imgDiv.innerHTML = '<img src="'+imgBoxList[i]+'" alt="" class="imgBoxList img-fluid">';
+    textDiv.classList.add('textDiv');
+    textDiv.innerHTML = '전체 결과 중 25%<br>반가워요! 저는 당신의 소울메이트,<br>'+test3case[i]+' '+test1case[test1resultIdx]+test2case[test2resultIdx]+'입니다.';
+    arrowDiv.innerHTML = '>';
+    detailDiv.classList.add('detailDiv');
+    detailDiv.classList.add('mx-3');
+    detailDiv.classList.add('mb-4');
+    detailDiv.id = 'detailDiv' + String(i);
+    detailDiv.style.height = String(window.innerHeight * 0.3) + 'px';
+    detailDiv.style.display = 'none';
+    detailImgDiv.classList.add('detailImgDiv');
+    detailImgDiv.classList.add('py-4');
+    detailImgDiv.innerHTML = '<img src="'+resultImgList[i]+'" alt="" class="resultImgList img-fluid">';
+    detailTextDiv.classList.add('detailTextDiv');
+    detailTextDiv.classList.add('px-4');
+    detailTextDiv.classList.add('pb-5');
+    detailTextDiv.innerHTML = resultText2[i];
+    detailTextDiv2.classList.add('detailTextDiv2');
+    detailTextDiv2.classList.add('px-4');
+    detailTextDiv2.classList.add('py-5');
+    detailTextDiv2.innerHTML = resultText3[i];
+    detailTestBtn.classList.add('detailTestBtn');
+    detailTestBtn.classList.add('mb-5');
+    detailTestBtn.classList.add('mx-auto');
+    detailTestBtn.innerHTML = test3case[i]+' '+test1case[test1resultIdx]+test2case[test2resultIdx]+'의 선물 보러가기';
+    detailDiv.appendChild(detailImgDiv);
+    detailDiv.appendChild(detailTextDiv);
+    detailDiv.appendChild(detailTextDiv2);
+    detailDiv.appendChild(detailTestBtn);
+    topDiv.appendChild(imgDiv);
+    topDiv.appendChild(textDiv);
+    topDiv.appendChild(arrowDiv);
+    testResult.appendChild(topDiv);
+    testResult.appendChild(detailDiv);
+    allResultButtonLayout.appendChild(testResult);
+  }
+}
+
 // question and answer array of test3
 const qnaList = [
   {

@@ -45,7 +45,11 @@ function bgmOn() {
 
 // function for going final page
 function goFinal() {
-  window.location.href = "../html/final.html";
+  window.location.href = "https://www.dancingastro.com/";
+}
+
+function reTest3() {
+  window.location.href = window.location.href;
 }
 
 // function for going test3 page
@@ -55,6 +59,10 @@ function goTest3() {
   // make url with test1result, test2result, cScore, fcScore
   let test3location = "../html/test3.html?"+String(test1resultIdx)+"?"+String(resultIdx)+"?"+String(cScore)+"?"+String(fcScore);
   window.location.href = test3location;
+}
+
+function reTest2() {
+  window.location.href = window.location.href;
 }
 
 // function for going test2 page

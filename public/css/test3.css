@@ -145,6 +145,83 @@ body {
   font-size: 13px;
 }
 
+#allResult {
+  display:none;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.allTestResult {
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+}
+
+.allTestResult::-webkit-scrollbar {
+  display: none;
+}
+
+.allResultButtonLayout {
+  width: 100%;
+}
+
+.testResultList {
+  width: 100%;
+  border-style: none;
+  background-color: rgb(243, 248, 254);
+  border-radius: 20px;
+}
+
+.topDiv {
+  align-items: center;
+  display: flex;
+}
+
+.imgBoxList {
+  border-radius: 20px;
+}
+
+.imgDiv {
+  flex: 1;
+}
+
+.textDiv {
+  text-align: left;
+  flex: 4;
+}
+
+.detailDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.detailDiv {
+  border-radius: 20px;
+  overflow: auto;
+  -webkit-filter: blur(0.000001px);
+  background-color: rgb(126, 97, 48);
+}
+
+.detailTextDiv {
+  text-align: center;
+  color: white;
+}
+
+.detailTextDiv2 {
+  text-align: left;
+  color: white;
+}
+
+.detailTestBtn {
+  height: 20%;
+  background-color: white;
+  border-radius: 20px;
+  display: block;
+  width: 80%;
+  border: 0px;
+  font-size: 13px;
+  color: black;
+}
+
 @font-face {
   font-family: 'GowunDodum-Regular';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
