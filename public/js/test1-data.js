@@ -1,3 +1,5 @@
+let resultCount;
+
 // make object for sending this table name to server ( app.js )
 var sqlObj = {
   // I take query in app.js with key: 'table'
@@ -12,6 +14,17 @@ fetch("/count", {
   body : JSON.stringify(sqlObj)
 }).then(res=>res.json())
 .then(response => document.getElementById('test1UserCount').innerHTML = '현재 총 ' + String(response) + '명이 참여했습니다.');
+
+// fetch to /count using POST method with format of json
+fetch("/resultCount", {
+  method : "POST",
+  headers : {
+    "Content-Type": "application/json"
+  },
+  body : JSON.stringify(sqlObj)
+}).then(res=>res.json())
+.then(response => {resultCount = response;}
+);
 
 // function for loading images to browser
 function preloading(imageArray) {
@@ -82,6 +95,17 @@ function setAllResultSize() {
 }
 
 function showAllResult() {
+
+  var sortable = [];
+  var sum = 0;
+  for (var name in resultCount) {
+    sum += resultCount[name];
+    sortable.push([parseInt(name), resultCount[name]]);
+  }
+  sortable.sort(function(a, b) {
+    return b[1] - a[1];
+  });
+
   var allResult = document.querySelector('#allResult');
   if (allResult.style.display == 'none') {
     setAllResultSize();
@@ -101,6 +125,7 @@ function showAllResult() {
   document.querySelector('.allTestResult').style.overflow = 'auto';
   var allResultButtonLayout = document.querySelector('.allResultButtonLayout');
   for (let i = 0; i < 4; i++) {
+    var idx = sortable[i][0];
     var testResult = document.createElement('button');
     testResult.classList.add('testResultList');
     testResult.classList.add('my-3');
@@ -125,16 +150,16 @@ function showAllResult() {
     var detailTextDiv2 = document.createElement('div');
     var detailTestBtn = document.createElement('button');
     detailTestBtn.addEventListener('click', function() {
-      let test2location = "../html/test2.html?"+String(i)+"?"+String(cScore)+"?"+String(fcScore)+"?"+String(rcScore);
+      let test2location = "../html/test2.html?"+String(sortable[i][0])+"?"+String(cScore)+"?"+String(fcScore)+"?"+String(rcScore);
       window.location.href = test2location;
     });
     topDiv.classList.add('topDiv');
     imgDiv.classList.add('imgDiv');
     imgDiv.classList.add('px-3');
     imgDiv.classList.add('py-3');
-    imgDiv.innerHTML = '<img src="'+imgBoxList[i]+'" alt="" class="imgBoxList img-fluid">';
+    imgDiv.innerHTML = '<img src="'+imgBoxList[idx]+'" alt="" class="imgBoxList img-fluid">';
     textDiv.classList.add('textDiv');
-    textDiv.innerHTML = '전체 결과 중 25%<br>당신의 소울메이트는..<br>'+test1case[i]+'씨네 집에 살고 있습니다.';
+    textDiv.innerHTML = '전체 결과 중 '+String(Math.floor(sortable[i][1]/sum*100))+'%<br>당신의 소울메이트는..<br>'+test1case[idx]+'씨네 집에 살고 있습니다.';
     arrowDiv.innerHTML = '>';
     detailDiv.classList.add('detailDiv');
     detailDiv.classList.add('mx-3');
@@ -144,15 +169,15 @@ function showAllResult() {
     detailDiv.style.display = 'none';
     detailImgDiv.classList.add('detailImgDiv');
     detailImgDiv.classList.add('py-4');
-    detailImgDiv.innerHTML = '<img src="'+resultImgList[i]+'" alt="" class="resultImgList img-fluid">';
+    detailImgDiv.innerHTML = '<img src="'+resultImgList[idx]+'" alt="" class="resultImgList img-fluid">';
     detailTextDiv.classList.add('detailTextDiv');
     detailTextDiv.classList.add('px-4');
     detailTextDiv.classList.add('pb-5');
-    detailTextDiv.innerHTML = resultText2[i];
+    detailTextDiv.innerHTML = resultText2[idx];
     detailTextDiv2.classList.add('detailTextDiv2');
     detailTextDiv2.classList.add('px-4');
     detailTextDiv2.classList.add('py-5');
-    detailTextDiv2.innerHTML = resultText3[i];
+    detailTextDiv2.innerHTML = resultText3[idx];
     detailTestBtn.classList.add('detailTestBtn');
     detailTestBtn.classList.add('mb-5');
     detailTestBtn.classList.add('mx-auto');

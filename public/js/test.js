@@ -79,11 +79,11 @@ function goTest1() {
 
 // function for going result section
 function goResult() {
-
-  // save in DB with important values in user's inputs
-  saveDB(testIdx, select);
   // get result using result algorithm
   resultIdx = calResult(testIdx, select);
+  select.push(String(resultIdx));
+  // save in DB with important values in user's inputs
+  saveDB(testIdx, select);
 
   // if it's test2, goTest3 button take proper texts in the button
   if (testIdx==1) {
@@ -139,6 +139,7 @@ function addAnswer(answerText, qIdx, idx) {
   answer.addEventListener("click", function() {
     // if last question, calling goResult function
     if (qIdx + 1 == endPoint) {
+      answer.disabled = true;
       goResult();
       return;
     }

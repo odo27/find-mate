@@ -16,7 +16,7 @@ function calResult(testNum, selectArr) {
     // In selectArr, It included them, loop starts with idx = 2
     // But array of score start from Q1 to Q11,
     // It have to start with idx = 0 in loop
-    for (let i = 2; i < reqIdx[testNum].length; i++) {
+    for (let i = 2; i < reqIdx[testNum].length-1; i++) {
       let point = score[testNum][i-2].point[selectArr[reqIdx[testNum][i]]]
       // if code equals c, c increases that points
       if (score[testNum][i-2].code == 'c') {
@@ -72,7 +72,7 @@ function calResult(testNum, selectArr) {
     // Test2 have selectArr consist of no independent variables
     // So algorithms have to use whole indexes
     // This array start from Q1 to Q11
-    for (let i = 0; i < reqIdx[testNum].length; i++) {
+    for (let i = 0; i < reqIdx[testNum].length-1; i++) {
       let point = score[testNum][i].point[selectArr[reqIdx[testNum][i]]]
       // if code equals l, l increases that points
       if (score[testNum][i].code == 'l') {
@@ -132,7 +132,7 @@ function calResult(testNum, selectArr) {
     // Test3 have selectArr consist of no independent variables
     // So algorithms have to use whole indexes
     // This array start from Q1 to Q15
-    for (let i = 0; i < reqIdx[testNum].length; i++) {
+    for (let i = 0; i < reqIdx[testNum].length-1; i++) {
       let point = score[testNum][i].point[selectArr[reqIdx[testNum][i]]]
       // if code equals e, e increases that points
       if (score[testNum][i].code == 'e') {

@@ -1,8 +1,11 @@
 // reqIdx have important indexes of user's inputs in qnaList
 let reqIdx = [
-  [1, 2, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25],
-  [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-  [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24]
+  // 26 is made by push, it refers to resultIdx of test1
+  [1, 2, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+  // 21 is made by push, it refers to resultIdx of test2
+  [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+  // 27 is made by push, it refers to resultIdx of test3
+  [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 27]
 ]
 
 // function of making querys that matched MySQl syntax

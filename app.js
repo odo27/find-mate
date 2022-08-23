@@ -36,6 +36,7 @@ app.post('/save', function(req, res) {
   // connect to database
   var connection = mysql.createConnection(conn);
   connection.connect();
+  console.log(req.body.query);
   connection.query(req.body.query, function(err, results, fields){
   });
   connection.end();
@@ -49,6 +50,19 @@ app.post('/count', function(req, res) {
   var query = "SELECT COUNT(*) as CNT FROM " + req.body.table;
   connection.query(query, function(err, results, fields){
     res.send(String(results[0].CNT));
+  });
+  connection.end();
+});
+
+// select result counts from db
+app.post('/resultCount', function(req, res) {
+  // connect to database
+  var connection = mysql.createConnection(conn);
+  connection.connect();
+  var query = "SELECT COUNT(CASE WHEN result=0 then 1 end) as CNT0, COUNT(CASE WHEN result=1 then 1 end) as CNT1, COUNT(CASE WHEN result=2 then 1 end) as CNT2, COUNT(CASE WHEN result=3 then 1 end) as CNT3 FROM " + req.body.table;
+  connection.query(query, function(err, results, fields){
+    resultCount = {0: results[0].CNT0, 1: results[0].CNT1, 2: results[0].CNT2, 3: results[0].CNT3}
+    res.send(resultCount);
   });
   connection.end();
 });
