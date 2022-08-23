@@ -196,6 +196,7 @@ body::-webkit-scrollbar {
 .textDiv {
   text-align: left;
   flex: 4;
+  color: black;
 }
 
 .detailDiv::-webkit-scrollbar {

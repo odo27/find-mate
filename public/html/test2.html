@@ -9,6 +9,22 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/test2.css">
   <link rel="stylesheet" href="../css/animation.css">
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script>
+    Kakao.init('d359737ffa46ce88b06eceee10166c0b');
+    Kakao.isInitialized();
+  </script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '600999611444378',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v14.0'
+      });
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </head>
 
 <body>
@@ -99,7 +115,7 @@
 
         </div>
         <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" onclick="js:goTest3()" id="goTest3Btn"></button>
-        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" onclick="js:goTest1()">첫 테스트로 돌아가기 및 공유하기</button>
+        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" style="color: black;" onclick="js:goTest1()">첫 테스트로 돌아가기 및 공유하기</button>
         <div class="col-6 mx-auto mt-5 mb-2" style="font-size: 16px;">
           친구에게 테스트 공유하기<br>
         </div>
@@ -111,8 +127,8 @@
         </div>
       </div>
       <div class="functionBox">
-        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" onclick="js:showAllResult()">모든 결과 보기</button>
-        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" onclick="js:reTest2()">테스트 다시하기</button>
+        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" style="color: black;" onclick="js:showAllResult()">모든 결과 보기</button>
+        <button type="button" name="button" class="resultBoxBtn mx-auto my-3 py-3" style="color: black;" onclick="js:reTest2()">테스트 다시하기</button>
       </div>
     </section>
     <section id="allResult" class="mx-auto">

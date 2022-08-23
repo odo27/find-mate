@@ -143,6 +143,7 @@ body {
   width: 70%;
   border: 0px;
   font-size: 13px;
+  color: black;
 }
 
 #allResult {
@@ -188,6 +189,7 @@ body {
 .textDiv {
   text-align: left;
   flex: 4;
+  color: black;
 }
 
 .detailDiv::-webkit-scrollbar {
