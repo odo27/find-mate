@@ -57,7 +57,7 @@ function goTest3() {
   // get test1resultIdx in test2's url
   const test1resultIdx = parseInt(location.href.split('?')[1]);
   // make url with test1result, test2result, cScore, fcScore
-  let test3location = "../html/test3.html?"+String(test1resultIdx)+"?"+String(resultIdx)+"?"+String(cScore)+"?"+String(fcScore);
+  let test3location = "./personality?"+String(test1resultIdx)+"?"+String(resultIdx)+"?"+String(cScore)+"?"+String(fcScore);
   window.location.href = test3location;
 }
 
@@ -68,13 +68,13 @@ function reTest2() {
 // function for going test2 page
 function goTest2() {
   // make url with test1result, cScore, fcScore, rcScore
-  let test2location = "../html/test2.html?"+String(resultIdx)+"?"+String(cScore)+"?"+String(fcScore)+"?"+String(rcScore);
+  let test2location = "./season?"+String(resultIdx)+"?"+String(cScore)+"?"+String(fcScore)+"?"+String(rcScore);
   window.location.href = test2location;
 }
 
 // function for going test1 page
 function goTest1() {
-  window.location.href = "../html/test1.html";
+  window.location.href = "./house";
 }
 
 // function for going result section

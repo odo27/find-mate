@@ -31,6 +31,18 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+app.get('/house', function(req, res) {
+  res.sendFile(__dirname + "/public/html/test1.html");
+});
+
+app.get('/season', function(req, res) {
+  res.sendFile(__dirname + "/public/html/test2.html");
+});
+
+app.get('/personality', function(req, res) {
+  res.sendFile(__dirname + "/public/html/test3.html");
+});
+
 // save to db with a query
 app.post('/save', function(req, res) {
   // connect to database
